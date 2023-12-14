@@ -25,8 +25,8 @@ class StoreMantenimientoRequest extends FormRequest
             'tipo_mantenimiento' => ['required'],
             'detalle_mantenimiento' => ['required'],
             'kilometraje' => ['required'],
-            'costo_mantenimiento' => ['required'],
-            'fecha_mantenimiento' => ['required'],
+            'costo_mantenimiento' => ['required', 'numeric', 'min:0'],
+            'fecha_mantenimiento' => ['required', 'date',],
             'vehiculo_id' => ['required']
         ];
     }

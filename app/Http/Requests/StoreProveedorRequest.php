@@ -22,11 +22,12 @@ class StoreProveedorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => ['required'],
-            'rfc' => ['required'],
-            'telefono' => ['required', 'min:10', 'max:12'],
-            'direccion' => ['required', 'max:255'],
-            'correo' => ['required', 'max:50']
+            'nombre' => ['required', 'string', 'max:255'],
+            'rfc' => ['required', 'string', 'min:13', 'max:13', 'uppercase', 'unique:proveedors'],
+            'telefono' => ['required', 'string', 'min:10', 'max:10'],
+            'direccion' => ['required', 'string', 'max:255'],
+            'correo' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:proveedors']
+
         ];
     }
 }
