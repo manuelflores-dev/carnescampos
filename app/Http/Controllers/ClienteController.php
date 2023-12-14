@@ -38,9 +38,14 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cliente $cliente)
+    public function buscar(Request $request)
     {
-        return view('cliente.show', ['cliente' => $cliente]);
+        $termino = $request->input('q');
+
+        // Realiza la búsqueda en la base de datos
+        $resultados = Cliente::where('nombre', 'LIKE', "%$termino%")->get();
+
+        return view('cliente.partials.search', compact('resultados'));
     }
 
     /**

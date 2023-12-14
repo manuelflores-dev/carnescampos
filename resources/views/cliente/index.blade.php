@@ -24,6 +24,7 @@
                     <div class="flex flex-col text-center w-full mb-10">
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Clientes registrados</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Seleciona un cliente para ver en detalle, actualizarlo o eliminarlo.</p>
+
                         <!-- HTML en una vista de Blade en Laravel -->
                         <div class="flex items-center justify-center mt-8 ">
                             <!-- Checkbox con color rojo -->
@@ -32,6 +33,7 @@
                                 <label for="redCheckbox" class="font-medium text-gray-700">Mostrar en tabla</label>
                             </div>
                         </div>
+
                     </div>
 
                     <div id="employeeTable" class="hidden">
