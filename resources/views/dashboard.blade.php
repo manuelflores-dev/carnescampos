@@ -90,15 +90,15 @@
 
                                 <div class="p-4 text-right">
                                     <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
-                                        Gastos en combustible
+                                        Gastos en combustible (Hoy)
                                     </p>
                                     <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                                        d
+                                        $ {{$costocombustible}}
                                     </h4>
                                 </div>
                                 <div class="border-t border-blue-gray-50 p-4">
                                     <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                                        <strong class="text-green-500">+0%</strong>&nbsp;En este mes
+                                        <strong class="text-blue-500">{{$numeroviajes}}</strong>&nbsp;Numero de viajes
                                     </p>
                                 </div>
                             </div>
@@ -115,15 +115,15 @@
                             </div>
                             <div class="p-4 text-right">
                                 <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
-                                    Gasto en facturas
+                                    Cuentas por pagar
                                 </p>
                                 <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-
+                                    $ {{$gastopagar}}
                                 </h4>
                             </div>
                             <div class="border-t border-blue-gray-50 p-4">
                                 <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                                    <strong class="text-green-500">+0%</strong>&nbsp;en el ultimo mes
+                                    <strong class="text-pink-500">{{$numeropagar}}</strong>&nbsp;Pendientes
                                 </p>
                             </div>
                         </div>
@@ -139,11 +139,12 @@
                                     Cuentas por cobrar
                                 </p>
                                 <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                                    0</h4>
+                                    $ {{$cobrar}}
+                                </h4>
                             </div>
                             <div class="border-t border-blue-gray-50 p-4">
                                 <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                                    <strong class="text-red-500">0%</strong>&nbsp;en el último mes
+                                    <strong class="text-green-500">{{$numerocobrar}}</strong>&nbsp;Pendientes
                                 </p>
                             </div>
                         </div>
@@ -156,13 +157,13 @@
                             </div>
                             <div class="p-4 text-right">
                                 <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
-                                    Gastos</p>
+                                    Gastos en mantenimientos</p>
                                 <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                                    $0</h4>
+                                    $ {{$gastom}}</h4>
                             </div>
                             <div class="border-t border-blue-gray-50 p-4">
                                 <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                                    <strong class="text-green-500">0%</strong>&nbsp;en el ultimo mes
+                                    <strong class="text-orange-500">{{$numerom}}</strong>&nbsp;en el ultimo mes
                                 </p>
                             </div>
                         </div>
@@ -177,7 +178,7 @@
                             Sección 1 - Gráfica de Usuarios -->
 
                         <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-cyan-600/70 shadow-2xl rounded-3xl">
-                            <h2 class="text-black text-lg font-semibold pb-1">Facturas</h2>
+                            <h2 class="text-black text-lg font-semibold pb-1">Facturas de cuentas por pagar</h2>
                             <div class="my1-"></div> <!-- Espacio de separación -->
                             <div class="bg-gradient-to-r from-red-300 to-cyan-500 h-px  mb-6"></div>
                             <!-- Línea con gradiente -->
@@ -189,7 +190,7 @@
 
                         <!-- Sección 2 - Gráfica de Comercios -->
                         <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-yellow-600/70 shadow-2xl rounded-3xl">
-                            <h2 class="text-black text-lg font-semibold pb-1">Vehiculos en ruta</h2>
+                            <h2 class="text-black text-lg font-semibold pb-1">Facturas de cuentas por cobrar</h2>
                             <div class="my-1"></div> <!-- Espacio de separación -->
                             <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
                             <!-- Línea con gradiente -->
