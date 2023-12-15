@@ -24,10 +24,16 @@ class DashboardController extends Controller
         $datosManteniminetos = $this->gastoMantenimientos();
         $datosPagar = $this->gastoCuentasPagar();
         $datosCobrar = $this->gastoCuentasCobrar();
+        $datosFacPagar = $this->infoPagarCuentas();
+        $datosFacCobrar = $this->infoCobrarCuentas();
+
+
 
         // Asigna los valores a variables separadas
         $costocombustible = $datosRecorridos['costocombustible'];
         $numeroviajes = $datosRecorridos['numeroviajes'];
+        $cantidadvr = $datosRecorridos['cantidadvr'];
+        $cantidadvnr = $datosRecorridos['cantidadvnr'];
 
         $gastom = $datosManteniminetos['gastom'];
         $numerom = $datosManteniminetos['numerom'];
@@ -38,28 +44,50 @@ class DashboardController extends Controller
         $gastocobrar = $datosCobrar['gastopagar'];
         $numerocobrar = $datosCobrar['numeropagar'];
 
+        $cantidadpendientes = $datosFacPagar['cantidadpendientes'];
+        $cantidadpagadas = $datosFacPagar['cantidadpagadas'];
+        $facpp = $datosFacPagar['facpp'];
+
+        $cantidadpendientesc = $datosFacCobrar['cantidadpendientesc'];
+        $cantidadpagadasc = $datosFacCobrar['cantidadpagadasc'];
+        $facpc = $datosFacCobrar['facpc'];
+
         // Pasa los datos a la vista 'index'
         //return view('dashboard', compact('costocombustible', 'numeroviajes'));
 
         return view('dashboard')
             ->with('costocombustible', $costocombustible)
             ->with('numeroviajes', $numeroviajes)
+            ->with('cantidadvr', $cantidadvr)
+            ->with('cantidadvnr', $cantidadvnr)
             ->with('gastopagar', $gastopagar)
             ->with('numeropagar', $numeropagar)
             ->with('cobrar', $gastocobrar)
             ->with('numerocobrar', $numerocobrar)
             ->with('gastom', $gastom)
-            ->with('numerom', $numerom);
+            ->with('numerom', $numerom)
+            ->with('cp1', $cantidadpagadas)
+            ->with('cp2', $cantidadpendientes)
+            ->with('cc1', $cantidadpagadasc)
+            ->with('cc2', $cantidadpendientesc)
+            ->with('facpp', $facpp)
+            ->with('facpc ', $facpc);
     }
 
     public function gastoCombustible()
     {
+        $cantidadVr = Recorrido::where('estatus', 'En ruta')->count();
+        $cantidadVnr = Recorrido::where('estatus', 'Disponible')->count();
+
         $fechaHoy = Carbon::now()->toDateString();
+
         $costocombustible = Recorrido::whereDate('created_at', $fechaHoy)->sum('costo_combustible');
         $numeroviajes = Recorrido::whereDate('created_at', $fechaHoy)->count();
         return [
             'costocombustible' => $costocombustible,
             'numeroviajes' => $numeroviajes,
+            'cantidadvr' => $cantidadVr,
+            'cantidadvnr' => $cantidadVnr
         ];
     }
 
@@ -101,6 +129,42 @@ class DashboardController extends Controller
         return [
             'gastopagar' => $gastopagar,
             'numeropagar' => $numeropagar,
+        ];
+    }
+
+    public function infoPagarCuentas()
+    {
+        // Obtener todas las facturas
+        $facturas = PagarCuenta::all();
+
+        // Contar el número de facturas con estatus "pendiente"
+        $cantidadPendientes = PagarCuenta::where('estatus', 'Pendiente')->count();
+
+        // Contar el número de facturas con estatus "pagada"
+        $cantidadPagadas = PagarCuenta::where('estatus', 'Pagada')->count();
+
+        return [
+            'facpp' => $facturas,
+            'cantidadpendientes' => $cantidadPendientes,
+            'cantidadpagadas' => $cantidadPagadas,
+        ];
+    }
+
+    public function infoCobrarCuentas()
+    {
+        // Obtener todas las facturas
+        $facturas = CobrarCuenta::all();
+
+        // Contar el número de facturas con estatus "pendiente"
+        $cantidadPendientesc = CobrarCuenta::where('estatus', 'Pendiente')->count();
+
+        // Contar el número de facturas con estatus "pagada"
+        $cantidadPagadasc = CobrarCuenta::where('estatus', 'Pagada')->count();
+
+        return [
+            'facpc' => $facturas,
+            'cantidadpendientesc' => $cantidadPendientesc,
+            'cantidadpagadasc' => $cantidadPagadasc,
         ];
     }
 }

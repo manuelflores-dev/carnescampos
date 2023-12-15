@@ -28,28 +28,52 @@
                 <nav>
 
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('empleado.index') }}">
-                        <i class="fas fa-person mr-2"></i>Empleados
+                        <i class="fas fa-users mr-2"></i>Empleados
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('cliente.index') }}">
-                        <i class="fas fa-exchange-alt mr-2"></i>Clientes
+                        <i class="fas  mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
+                            </svg>
+                        </i>Clientes
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('proveedor.index') }}">
-                        <i class="fas fa-user mr-2"></i>Proveedores
+                        <i class="fas  mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
+                            </svg>
+                        </i>Proveedores
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('vehiculo.index') }}">
-                        <i class="fas fa-truck mr-2"></i>Vehículos
+                        <i class="fas mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 116 0h3a.75.75 0 00.75-.75V15z" />
+                                <path d="M8.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM15.75 6.75a.75.75 0 00-.75.75v11.25c0 .087.015.17.042.248a3 3 0 015.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 00-3.732-10.104 1.837 1.837 0 00-1.47-.725H15.75z" />
+                                <path d="M19.5 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
+                            </svg>
+                        </i>Vehículos
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('mantenimiento.index') }}">
-                        <i class="fas fa-truck mr-2"></i>Mantenimientos
+                        <i class="fas fa-mantenice mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M12 6.75a5.25 5.25 0 016.775-5.025.75.75 0 01.313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 011.248.313 5.25 5.25 0 01-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 112.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0112 6.75zM4.117 19.125a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z" clip-rule="evenodd" />
+                                <path d="M10.076 8.64l-2.201-2.2V4.874a.75.75 0 00-.364-.643l-3.75-2.25a.75.75 0 00-.916.113l-.75.75a.75.75 0 00-.113.916l2.25 3.75a.75.75 0 00.643.364h1.564l2.062 2.062 1.575-1.297z" />
+                                <path fill-rule="evenodd" d="M12.556 17.329l4.183 4.182a3.375 3.375 0 004.773-4.773l-3.306-3.305a6.803 6.803 0 01-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 00-.167.063l-3.086 3.748zm3.414-1.36a.75.75 0 011.06 0l1.875 1.876a.75.75 0 11-1.06 1.06L15.97 17.03a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </i>Mantenimientos
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r from-red-600 to-red-300 hover:text-white" href="{{ route('recorrido.index') }}">
                         <i class="fas fa-road mr-2"></i>Recorridos
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('pagarcuenta.index') }}">
-                        <i class="fas fa-book mr-2"></i>Cuentas por Pagar
+                        <i class="fas mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zM6 12a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V12zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 15a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V15zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 18a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V18zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                            </svg>
+                        </i>Cuentas por Pagar
                     </a>
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('cobrarcuenta.index') }}">
-                        <i class="fas fa-pay mr-2"></i>Cuentas por cobrar
+                        <i class="fas  mr-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625V9.375zM6 12a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V12zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 15a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V15zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75zM6 18a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H6.75a.75.75 0 01-.75-.75V18zm2.25 0a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H9a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                            </svg>
+                        </i>Cuentas por cobrar
                     </a>
                 </nav>
 
@@ -69,7 +93,7 @@
             <!-- Área de contenido principal -->
             <div class="flex-1 p-4 ">
                 <!-- Campo de búsqueda -->
-                <h2 class="text-center text-2xl font-semibold mb-4">Indicadores Principales</h2>
+
                 <div class="relative max-w-md w-full">
 
                 </div>
@@ -171,16 +195,26 @@
 
 
                     <!-- Contenedor de las 4 secciones (disminuido para dispositivos pequeños) -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 p-2">
-
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 p-2">
+                        <!-- Sección 2 - Gráfica de Comercios -->
+                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-2xl shadow-blue-600/70 rounded-3xl">
+                            <h2 class="text-black text-lg font-semibold pb-1">Recorrido de vehículos de hoy</h2>
+                            <div class="my-1"></div> <!-- Espacio de separación -->
+                            <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
+                            <!-- Línea con gradiente -->
+                            <div class="chart-container" style="position: relative; height:150px; width:100%">
+                                <!-- El canvas para la gráfica -->
+                                <canvas id="commercesChart2"></canvas>
+                            </div>
+                        </div>
                         <!-- Sección 1 - Gráfica de Usuarios (disminuida para dispositivos
 
                             Sección 1 - Gráfica de Usuarios -->
 
-                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-cyan-600/70 shadow-2xl rounded-3xl">
+                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-pink-600/70 shadow-2xl rounded-3xl">
                             <h2 class="text-black text-lg font-semibold pb-1">Facturas de cuentas por pagar</h2>
                             <div class="my1-"></div> <!-- Espacio de separación -->
-                            <div class="bg-gradient-to-r from-red-300 to-cyan-500 h-px  mb-6"></div>
+                            <div class="bg-gradient-to-r from-red-300 to-red-600 h-px  mb-6"></div>
                             <!-- Línea con gradiente -->
                             <div class="chart-container" style="position: relative; height:150px; width:100%">
                                 <!-- El canvas para la gráfica -->
@@ -189,7 +223,7 @@
                         </div>
 
                         <!-- Sección 2 - Gráfica de Comercios -->
-                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-yellow-600/70 shadow-2xl rounded-3xl">
+                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 shadow-green-600/70 shadow-2xl rounded-3xl">
                             <h2 class="text-black text-lg font-semibold pb-1">Facturas de cuentas por cobrar</h2>
                             <div class="my-1"></div> <!-- Espacio de separación -->
                             <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
@@ -201,6 +235,8 @@
                         </div>
 
 
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 p-2">
                         <!-- Sección 3 - Tabla de Autorizaciones Pendientes (disminuida para dispositivos pequeños) -->
                         <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 rounded-3xl  shadow-red-500/70 shadow-lg">
                             <h2 class="text-black text-lg font-semibold pb-4">Facturas</h2>
@@ -219,17 +255,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    @foreach ($facpp as $fac)
                                     <tr class="hover:bg-grey-lighter">
                                         <td class="py-2 px-4 border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                        <td class="py-2 px-4 border-b border-grey-light"></td>
+                                        <td class="py-2 px-4 border-b border-grey-light">{{$fac->proveedor->nombre}}</td>
                                         <td class="py-2 px-4 border-b border-grey-light"></td>
                                         <td class="px-6 py-4">
                                             <a href="" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                                 Ver factura</a>
                                         </td>
                                     </tr>
-
+                                    @endforeach
                                     <!-- Añade más filas aquí como la anterior para cada autorización pendiente -->
                                 </tbody>
                             </table>
@@ -282,18 +318,20 @@
 
     <!-- Script para las gráficas -->
     <script>
-        var a = "1";
-        var b = "2";
-        var d = "3";
-        var e = "3";
-        // Gráfica de Usuarios
+        var a = "{{$cp1}}";
+        var b = "{{$cp2}}";
+        var d = "{{$cc1}}";
+        var e = "{{$cc2}}";
+        var f = "{{$cantidadvr}}";
+        var g = "{{$cantidadvnr}}";
+        // Gráfica de facturas por pagar
         var usersChart = new Chart(document.getElementById('usersChart'), {
             type: 'doughnut',
             data: {
                 labels: ['Pagadas', 'Pendientes'],
                 datasets: [{
                     data: [a, b],
-                    backgroundColor: ['#00F0FF', '#8B8B8D'],
+                    backgroundColor: ['#D42A46', '#8B8B8D'],
                 }]
             },
             options: {
@@ -310,10 +348,29 @@
 
             type: 'doughnut',
             data: {
-                labels: ['En ruta', 'Terminado'],
+                labels: ['Cobrada', 'Pendiente'],
                 datasets: [{
                     data: [d, e],
-                    backgroundColor: ['#FEC500', '#8B8B8D'],
+                    backgroundColor: ['#118C42', '#8B8B8D'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom' // Ubicar la leyenda debajo del círculo
+                }
+            }
+        });
+        // Gráfica de vehiculos
+        var commercesChart = new Chart(document.getElementById('commercesChart2'), {
+
+            type: 'doughnut',
+            data: {
+                labels: ['Recorrido terminado', 'En recorrido'],
+                datasets: [{
+                    data: [f, g],
+                    backgroundColor: ['#274bce', '#8B8B8D'],
                 }]
             },
             options: {
