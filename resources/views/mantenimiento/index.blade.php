@@ -15,7 +15,7 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('mantenimiento.create')}}">Agregar mantenimiento</a>
             </nav>
             <form action="{{ route('buscar.mantenimiento') }}" method="GET">
-                <x-text-input id="mantenimiento" name="mantenimiento" type="text" autofocus placeholder="Buscar por nombre" />
+                <x-text-input id="mantenimiento" name="mantenimiento" type="text" autofocus placeholder="Buscar por vehículo" />
                 <button type="submit">Buscar</button>
             </form>
         </div>

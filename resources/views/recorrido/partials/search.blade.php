@@ -15,7 +15,7 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('recorrido.create')}}">Agregar recorrido</a>
             </nav>
             <form action="{{ route('buscar.recorrido') }}" method="GET">
-                <x-text-input id="recorrido" name="recorrido" type="text" autofocus placeholder="Buscar por nombre" />
+                <x-text-input id="recorrido" name="recorrido" type="text" autofocus placeholder="Buscar por vehículo" />
                 <button type="submit">Buscar</button>
             </form>
         </div>
@@ -29,7 +29,9 @@
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Recorridos registrados</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-red-500">Seleciona un recorrido para ver en detalle, actualizarlo o eliminarlo.</p>
                     </div>
-
+                    @if ($resultados->isEmpty())
+                    <p>No se encontraron resultados.</p>
+                    @else
                     <!--Tabs navigation-->
                     <ul class="mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0" role="tablist" data-te-nav-ref>
                         <li role="presentation" class="flex-grow basis-0 text-center">
@@ -82,7 +84,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($recorridos as $recorrido)
+                                        @foreach ($resultados as $recorrido)
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
                                             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
@@ -180,7 +182,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($recorridos as $recorrido) @if ($recorrido->estatus == 'En ruta')
+                                        @foreach ($resultados as $recorrido) @if ($recorrido->estatus == 'En ruta')
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
                                             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
@@ -279,7 +281,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($recorridos as $recorrido) @if ($recorrido->estatus == 'Disponible')
+                                        @foreach ($resultados as $recorrido) @if ($recorrido->estatus == 'Disponible')
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
                                             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
@@ -342,7 +344,7 @@
                             </div>
                         </div>
                     </div>
-
+                    @endif
                 </div>
             </div>
         </div>

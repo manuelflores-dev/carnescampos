@@ -15,7 +15,7 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('recorrido.create')}}">Agregar recorrido</a>
             </nav>
             <form action="{{ route('buscar.recorrido') }}" method="GET">
-                <x-text-input id="recorrido" name="recorrido" type="text" autofocus placeholder="Buscar por nombre" />
+                <x-text-input id="recorrido" name="recorrido" type="text" autofocus placeholder="Buscar por vehículo" />
                 <button type="submit">Buscar</button>
             </form>
         </div>

@@ -15,7 +15,7 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('pagarcuenta.create')}}">Agregar cuenta por pagar</a>
             </nav>
             <form action="{{ route('buscar.pagarcuenta') }}" method="GET">
-                <x-text-input id="pagarcuenta" name="pagarcuenta" type="text" autofocus placeholder="Buscar por nombre" />
+                <x-text-input id="pagarcuenta" name="pagarcuenta" type="text" autofocus placeholder="Buscar por proveedor" />
                 <button type="submit">Buscar</button>
             </form>
         </div>

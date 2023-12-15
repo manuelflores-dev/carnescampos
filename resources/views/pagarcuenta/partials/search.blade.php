@@ -15,7 +15,7 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('pagarcuenta.create')}}">Agregar cuenta por pagar</a>
             </nav>
             <form action="{{ route('buscar.pagarcuenta') }}" method="GET">
-                <x-text-input id="pagarcuenta" name="pagarcuenta" type="text" autofocus placeholder="Buscar por nombre" />
+                <x-text-input id="pagarcuenta" name="pagarcuenta" type="text" autofocus placeholder="Buscar por proveedor" />
                 <button type="submit">Buscar</button>
             </form>
         </div>
@@ -31,6 +31,9 @@
                             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Facturas de cuentas por pagar</h1>
                             <p class="lg:w-2/3 mx-auto leading-relaxed text-red-500">Seleciona una cuenta por pagar para ver en detalle, actualizarla o eliminarla.</p>
                         </div>
+                        @if ($resultados->isEmpty())
+                        <p>No se encontraron resultados.</p>
+                        @else
                         <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
 
                             <!--Tabs navigation-->
@@ -69,7 +72,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($pagarcuentas as $pagarcuenta)
+                                                @foreach ($resultados as $pagarcuenta)
                                                 <tr>
                                                     <td>{{$pagarcuenta->numero_factura}}</td>
                                                     <td>{{$pagarcuenta->fecha_emision}}</td>
@@ -111,7 +114,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($pagarcuentas as $pagarcuenta) @if ($pagarcuenta->estatus == 'Pendiente')
+                                                @foreach ($resultados as $pagarcuenta) @if ($pagarcuenta->estatus == 'Pendiente')
                                                 <tr>
                                                     <td>{{$pagarcuenta->numero_factura}}</td>
                                                     <td>{{$pagarcuenta->fecha_emision}}</td>
@@ -154,7 +157,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($pagarcuentas as $pagarcuenta) @if ($pagarcuenta->estatus == 'Pagada')
+                                                @foreach ($resultados as $pagarcuenta) @if ($pagarcuenta->estatus == 'Pagada')
                                                 <tr>
                                                     <td>{{$pagarcuenta->numero_factura}}</td>
                                                     <td>{{$pagarcuenta->fecha_emision}}</td>
@@ -180,6 +183,7 @@
                         </div>
                         </p>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
