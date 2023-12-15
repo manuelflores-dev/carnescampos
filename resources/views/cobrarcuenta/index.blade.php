@@ -14,6 +14,10 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('dashboard')}}">Regresar</a>
                 <a class="mr-5 hover:text-red-600" href="{{route('cobrarcuenta.create')}}">Agregar cuenta por cobrar</a>
             </nav>
+            <form action="{{ route('buscar.cobrarcuenta') }}" method="GET">
+                <x-text-input id="cobrarcuenta" name="cobrarcuenta" type="text" autofocus placeholder="Buscar por nombre" />
+                <button type="submit">Buscar</button>
+            </form>
         </div>
     </x-slot>
 

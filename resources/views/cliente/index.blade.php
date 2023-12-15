@@ -14,6 +14,10 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('dashboard')}}">Regresar</a>
                 <a class="mr-5 hover:text-red-600" href="{{route('cliente.create')}}">Agregar cliente</a>
             </nav>
+            <form action="{{ route('buscar.cliente') }}" method="GET">
+                <x-text-input id="nombre" name="cliente" type="text" autofocus autocomplete="nombre" placeholder="Buscar por nombre" />
+                <button type="submit">Buscar</button>
+            </form>
         </div>
     </x-slot>
 

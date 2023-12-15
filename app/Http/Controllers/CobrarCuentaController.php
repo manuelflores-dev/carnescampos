@@ -43,6 +43,17 @@ class CobrarCuentaController extends Controller
     {
     }
 
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('cobrarcuenta');
+
+        $resultados = CobrarCuenta::whereHas('cliente', function ($query) use ($termino) {
+            $query->where('nombre', 'LIKE', "%$termino%");
+        })->get();
+
+        return view('cobrarcuenta.partials.search', compact('resultados'));
+    }
+
     public function clienteCobrarCuentas($id)
     {
         return view('cobrarcuenta.partials.cliente', ['cobrarcuentas' => CobrarCuenta::where('cliente_id', $id)->get()]);

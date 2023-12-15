@@ -43,6 +43,16 @@ class EmpleadoController extends Controller
         return view('empleado.show', ['empleado' => $empleado]);
     }
 
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('empleado');
+
+        // Realiza la búsqueda en la base de datos
+        $resultados = Empleado::where('nombre', 'LIKE', "%$termino%")->get();
+
+        return view('empleado.partials.search', compact('resultados'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

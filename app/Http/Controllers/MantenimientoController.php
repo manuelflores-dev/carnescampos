@@ -42,6 +42,16 @@ class MantenimientoController extends Controller
     public function show()
     {
     }
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('mantenimiento');
+
+        $resultados = Mantenimiento::whereHas('vehiculo', function ($query) use ($termino) {
+            $query->where('marca', 'LIKE', "%$termino%");
+        })->get();
+
+        return view('mantenimiento.partials.search', compact('resultados'));
+    }
 
     public function vehiculoMantenimientos($id)
     {

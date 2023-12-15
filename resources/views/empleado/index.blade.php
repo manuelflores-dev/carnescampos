@@ -16,6 +16,10 @@
                 <a class="mr-5 hover:text-red-600" href="{{route('empleado.create')}}">Agregar empleado</a>
                 <a class="mr-5 hover:text-red-600">Recorridos de empleados</a>
             </nav>
+            <form action="{{ route('buscar.empleado') }}" method="GET">
+                <x-text-input id="empleado" name="empleado" type="text" autofocus placeholder="Buscar por nombre" />
+                <button type="submit">Buscar</button>
+            </form>
         </div>
     </x-slot>
 

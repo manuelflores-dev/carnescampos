@@ -36,7 +36,10 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- resultado_busqueda.blade.php -->
+                    @if ($resultados->isEmpty())
+                    <p>No se encontraron resultados.</p>
+                    @else
                     <div id="employeeTable" class="hidden">
                         <section>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
@@ -66,7 +69,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($proveedors as $proveedor)
+                                        @foreach ($resultados as $proveedor)
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
                                             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
@@ -115,7 +118,7 @@
                         <section class="text-gray-600 body-font">
                             <div class="container px-5 mx-auto">
                                 <div class="flex flex-wrap -m-2">
-                                    @foreach ($proveedors as $proveedor)
+                                    @foreach ($resultados as $proveedor)
                                     <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
                                         <a href="proveedor/{{ $proveedor->id }}">
                                             <div class="h-full flex items-center border-gray-200 border p-4 transform  hover:scale-105 transition duration-300 relative bg-clip-border rounded-3xl bg-white text-gray-700 shadow-md">
@@ -158,6 +161,7 @@
                             });
                         });
                     </script>
+                    @endif
                 </div>
             </div>
         </div>

@@ -42,7 +42,15 @@ class ProveedorController extends Controller
     {
         return view('proveedor.show', ['proveedor' => $proveedor]);
     }
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('proveedor');
 
+        // Realiza la búsqueda en la base de datos
+        $resultados = Proveedor::where('nombre', 'LIKE', "%$termino%")->get();
+
+        return view('proveedor.partials.search', compact('resultados'));
+    }
     /**
      * Show the form for editing the specified resource.
      */

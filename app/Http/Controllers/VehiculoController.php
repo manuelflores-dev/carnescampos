@@ -43,6 +43,16 @@ class VehiculoController extends Controller
         return view('vehiculo.show', ['vehiculo' => $vehiculo]);
     }
 
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('vehiculo');
+
+        // Realiza la búsqueda en la base de datos
+        $resultados = Vehiculo::where('marca', 'LIKE', "%$termino%")->get();
+
+        return view('vehiculo.partials.search', compact('resultados'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

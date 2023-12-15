@@ -55,7 +55,16 @@ class RecorridoController extends Controller
     public function show()
     {
     }
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('recorrido');
 
+        $resultados = Recorrido::whereHas('vehiculo', function ($query) use ($termino) {
+            $query->where('marca', 'LIKE', "%$termino%");
+        })->get();
+
+        return view('recorrido.partials.search', compact('resultados'));
+    }
     public function empleadoRecorridos($id)
     {
         return view('recorrido.partials.empleado', ['recorridos' => Recorrido::where('empleado_id', $id)->get()]);

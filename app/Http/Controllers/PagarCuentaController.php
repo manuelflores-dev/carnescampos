@@ -42,6 +42,16 @@ class PagarCuentaController extends Controller
     public function show()
     {
     }
+    public function buscar(Request $request)
+    {
+        $termino = $request->input('pagarcuenta');
+
+        $resultados = PagarCuenta::whereHas('proveedor', function ($query) use ($termino) {
+            $query->where('nombre', 'LIKE', "%$termino%");
+        })->get();
+
+        return view('pagarcuenta.partials.search', compact('resultados'));
+    }
 
     public function proveedorPagarCuentas($id)
     {

@@ -1,32 +1,33 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
-            <svg class="w-[50px] h-[50px] fill-[#d22d2d]" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg class="w-[50px] h-[50px] fill-[#d22d2d]" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
 
-                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path d="M80 48a48 48 0 1 1 96 0A48 48 0 1 1 80 48zm64 193.7v65.1l51 51c7.1 7.1 11.8 16.2 13.4 26.1l15.2 90.9c2.9 17.4-8.9 33.9-26.3 36.8s-33.9-8.9-36.8-26.3l-14.3-85.9L66.8 320C54.8 308 48 291.7 48 274.7V186.6c0-32.4 26.2-58.6 58.6-58.6c24.1 0 46.5 12 59.9 32l47.4 71.1 10.1 5V160c0-17.7 14.3-32 32-32H384c17.7 0 32 14.3 32 32v76.2l10.1-5L473.5 160c13.3-20 35.8-32 59.9-32c32.4 0 58.6 26.2 58.6 58.6v88.1c0 17-6.7 33.3-18.7 45.3l-79.4 79.4-14.3 85.9c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l15.2-90.9c1.6-9.9 6.3-19 13.4-26.1l51-51V241.7l-19 28.5c-4.6 7-11 12.6-18.5 16.3l-59.6 29.8c-2.4 1.3-4.9 2.2-7.6 2.8c-2.6 .6-5.3 .9-7.9 .8H256.7c-2.5 .1-5-.2-7.5-.7c-2.9-.6-5.6-1.6-8.1-3l-59.5-29.8c-7.5-3.7-13.8-9.4-18.5-16.3l-19-28.5zM2.3 468.1L50.1 348.6l49.2 49.2-37.6 94c-6.6 16.4-25.2 24.4-41.6 17.8S-4.3 484.5 2.3 468.1zM512 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm77.9 348.6l47.8 119.5c6.6 16.4-1.4 35-17.8 41.6s-35-1.4-41.6-17.8l-37.6-94 49.2-49.2z"></path>
+                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path d="M64 32C28.7 32 0 60.7 0 96V304v80 16c0 44.2 35.8 80 80 80c26.2 0 49.4-12.6 64-32c14.6 19.4 37.8 32 64 32c44.2 0 80-35.8 80-80c0-5.5-.6-10.8-1.6-16H416h33.6c-1 5.2-1.6 10.5-1.6 16c0 44.2 35.8 80 80 80s80-35.8 80-80c0-5.5-.6-10.8-1.6-16H608c17.7 0 32-14.3 32-32V288 272 261.7c0-9.2-3.2-18.2-9-25.3l-58.8-71.8c-10.6-13-26.5-20.5-43.3-20.5H480V96c0-35.3-28.7-64-64-64H64zM585 256H480V192h48.8c2.4 0 4.7 1.1 6.2 2.9L585 256zM528 368a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM176 400a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM80 368a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
 
-            </svg>
-            <span class="ml-3 text-2xl">Proveedores</span>
+                </svg>
+                <span class="ml-3 text-2xl">Vehículos</span>
             </a>
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-red-600	flex flex-wrap items-center text-lg justify-center">
                 <a class="mr-5 hover:text-red-600" href="{{route('dashboard')}}">Regresar</a>
-                <a class="mr-5 hover:text-red-600" href="{{route('proveedor.create')}}">Agregar proveedor</a>
+                <a class="mr-5 hover:text-red-600" href="{{route('vehiculo.create')}}">Agregar vehículo</a>
             </nav>
-            <form action="{{ route('buscar.proveedor') }}" method="GET">
-                <x-text-input id="proveedor" name="proveedor" type="text" autofocus placeholder="Buscar por nombre" />
+            <form action="{{ route('buscar.vehiculo') }}" method="GET">
+                <x-text-input id="vehiculo" name="vehiculo" type="text" autofocus placeholder="Buscar por nombre" />
                 <button type="submit">Buscar</button>
             </form>
         </div>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-3xl shadow-red-600/30">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col text-center w-full mb-10">
-                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Proveedores registrados</h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Seleciona un proveedor para ver en detalle, actualizarlo o eliminarlo.</p>
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Vehículos registrados</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Seleciona un vehículo para ver en detalle, actualizarlo o eliminarlo.</p>
                         <!-- HTML en una vista de Blade en Laravel -->
                         <div class="flex items-center justify-center mt-8 ">
                             <!-- Checkbox con color rojo -->
@@ -36,7 +37,10 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- resultado_busqueda.blade.php -->
+                    @if ($resultados->isEmpty())
+                    <p>No se encontraron resultados.</p>
+                    @else
                     <div id="employeeTable" class="hidden">
                         <section>
                             <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
@@ -44,21 +48,24 @@
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
+                                            <th scope="col" class="p-4">
+
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Vehículo
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Serie
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Placas
+                                            </th>
 
                                             <th scope="col" class="px-6 py-3">
-                                                Nombre
+                                                Kilometraje
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                RFC
-                                            </th>
-                                            <th scope="col" class="px-6 py-3">
-                                                Teléfono
-                                            </th>
-                                            <th scope="col" class="px-6 py-3">
-                                                Correo
-                                            </th>
-                                            <th scope="col" class="px-6 py-3">
-                                                Dirección
+                                                Estado
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Accion
@@ -66,40 +73,49 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($proveedors as $proveedor)
+                                        @foreach ($resultados as $vehiculo)
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
-                                            <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                                <svg class="w-[34px] h-[34px] fill-[#ff7070]" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                            <td class="w-4 p-4">
+                                                <svg class="w-[34px] h-[34px] fill-[#ff7070]" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
 
                                                     <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                    <path d="M0 96l576 0c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96zm0 32V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128H0zM64 405.3c0-29.5 23.9-53.3 53.3-53.3H234.7c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7H74.7c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16z"></path>
+                                                    <path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
 
                                                 </svg>
 
-
+                                            </td>
+                                            <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                                 <div class="pl-3">
-                                                    <div class="text-base font-semibold">{{$proveedor->nombre}}</div>
-                                                    <!-- <div class="font-normal text-gray-500">{{$proveedor->area}}</div>-->
+                                                    <div class="text-base font-semibold">{{ $vehiculo->marca }}
+                                                    </div>
+                                                    <div class="font-normal text-gray-500">{{ $vehiculo->modelo }}
+                                                    </div>
                                                 </div>
                                             </th>
                                             <td class="px-6 py-4">
-                                                {{$proveedor->rfc}}
+                                                {{ $vehiculo->serie }}
                                             </td>
                                             <td class="px-6 py-4">
-                                                {{$proveedor->telefono}}
+                                                {{ $vehiculo->placas }}
                                             </td>
+
                                             <td class="px-6 py-4">
-                                                {{$proveedor->correo}}
+                                                {{ $vehiculo->kilometros }}
                                             </td>
                                             <td class="px-6 py-4">
                                                 <div class="flex items-center">
-                                                    <div></div> {{$proveedor->direccion}}
+                                                    @if($vehiculo->estatus== "Disponible")
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                    @endif
+                                                    @if($vehiculo->estatus== "No disponible")
+                                                    <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                    @endif
+                                                    {{ $vehiculo->estatus }}
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <a href="proveedor/{{ $proveedor->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar
-                                                </a>
+                                                <a href="vehiculo/{{ $vehiculo->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                                    Detalles</a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -115,24 +131,34 @@
                         <section class="text-gray-600 body-font">
                             <div class="container px-5 mx-auto">
                                 <div class="flex flex-wrap -m-2">
-                                    @foreach ($proveedors as $proveedor)
+                                    @foreach ($resultados as $vehiculo)
                                     <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-                                        <a href="proveedor/{{ $proveedor->id }}">
+                                        <a href="vehiculo/{{ $vehiculo->id }}">
                                             <div class="h-full flex items-center border-gray-200 border p-4 transform  hover:scale-105 transition duration-300 relative bg-clip-border rounded-3xl bg-white text-gray-700 shadow-md">
                                                 <div class="w-16 h-16 mr-4">
-                                                    <svg class="w-[65px] h-[65px] fill-[#ff7070]" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+                                                    <svg class="w-[61px] h-[61px] fill-[#ff7070]" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
 
                                                         <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                                        <path d="M0 96l576 0c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96zm0 32V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128H0zM64 405.3c0-29.5 23.9-53.3 53.3-53.3H234.7c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7H74.7c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16z"></path>
+                                                        <path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
 
                                                     </svg>
                                                 </div>
-                                                <div class="flex-grow">
-                                                    <h2 class="text-gray-900 title-font font-medium">{{$proveedor->nombre}}</h2>
-                                                    <p class="text-gray-500">{{$proveedor->rfc}}</p>
-                                                    <p class="text-gray-500">{{$proveedor->correo}}</p>
-                                                </div>
 
+                                                <div class="flex-grow">
+                                                    <h2 class="text-gray-900 title-font font-medium">{{$vehiculo->marca}}</h2>
+                                                    <p class="text-gray-500">{{$vehiculo->placas}}</p>
+                                                    <p class="text-gray-500">
+                                                    <div class="flex items-center">
+                                                        @if($vehiculo->estatus== "Disponible")
+                                                        <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                        @endif
+                                                        @if($vehiculo->estatus== "No disponible")
+                                                        <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                        @endif
+                                                        {{ $vehiculo->estatus }}
+                                                    </div>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </a>
                                     </div>
@@ -158,6 +184,7 @@
                             });
                         });
                     </script>
+                    @endif
                 </div>
             </div>
         </div>

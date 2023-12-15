@@ -40,7 +40,7 @@ class ClienteController extends Controller
      */
     public function buscar(Request $request)
     {
-        $termino = $request->input('q');
+        $termino = $request->input('cliente');
 
         // Realiza la búsqueda en la base de datos
         $resultados = Cliente::where('nombre', 'LIKE', "%$termino%")->get();
