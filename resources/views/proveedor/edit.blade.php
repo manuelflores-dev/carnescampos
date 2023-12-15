@@ -13,7 +13,7 @@
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-red-600	flex flex-wrap items-center text-lg justify-center">
                 <a class="mr-5 hover:text-red-600" href="{{route('proveedor.index')}}">Regresar</a>
                 <a class="mr-5 hover:text-red-600" href="{{route('proveedor.create')}}">Agregar proveedor</a>
-                <a class="mr-5 hover:text-red-600" href="{{ route('facturas.proveedor', ['id' => $proveedor->id])}}">Todos las facturas de este proveedor</a>
+                <a class="mr-5 hover:text-red-600" href="{{ route('pagarcuentas.proveedor', ['id' => $proveedor->id])}}">Todos las facturas de este proveedor</a>
             </nav>
         </div>
     </x-slot>

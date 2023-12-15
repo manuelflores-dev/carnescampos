@@ -12,9 +12,7 @@
             </a>
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-red-600	flex flex-wrap items-center text-lg justify-center">
                 <a class="mr-5 hover:text-red-600" href="javascript:void(0);" onclick="history.back();">Regresar</a>
-                <a class=" mr-5 hover:text-red-600" href="{{route('recorrido.create')}}">Agregar recorrido</a>
-                <a class="mr-5 hover:text-red-600" href="{{route('recorrido.create')}}">Recorridos por vehiculo</a>
-                <a class=" mr-5 hover:text-red-600">Recorridos por empleado</a>
+
             </nav>
         </div>
     </x-slot>
@@ -23,8 +21,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-3xl">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col text-center w-full mb-10">
-                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Empleados registrados</h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-red-500">Seleciona un empleado para ver en detalle, actualizarlo o eliminarlo.</p>
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Recorridos de este vehículo</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-red-500">Seleciona un recorrido para ver en detalle, actualizarlo o eliminarlo.</p>
                         <!-- HTML en una vista de Blade en Laravel -->
                         <div class="flex items-center justify-center mt-8 ">
                             <!-- Checkbox con color rojo -->

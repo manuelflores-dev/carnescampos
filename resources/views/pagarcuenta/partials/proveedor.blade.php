@@ -20,8 +20,8 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-3xl">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col text-center w-full mb-10">
-                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Cuentas registrados</h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-red-500">Seleciona un empleado para ver en detalle, actualizarlo o eliminarlo.</p>
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Todas las facturas de este proveedor</h1>
+                        <p class="lg:w-2/3 mx-auto leading-relaxed text-red-500">Seleciona una factura para ver en detalle, actualizarlo o eliminarlo.</p>
                         <!-- HTML en una vista de Blade en Laravel -->
                         <div class="flex items-center justify-center mt-8 ">
                             <!-- Checkbox con color rojo -->
@@ -53,27 +53,29 @@
                         <section class="text-gray-600 body-font">
                             <div class="container px-5 mx-auto">
                                 <div class="flex flex-wrap -m-2">
-                                    @foreach ($pagarcuentas as $cobrarcuetna)
+                                    @foreach ($pagarcuentas as $pagarcuenta)
                                     <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
-                                        <a href="{{ route('pagarcuenta.update', ['pagarcuenta' => $cobrarcuetna->id])}}">
+                                        <a href="{{ route('pagarcuenta.update', ['pagarcuenta' => $pagarcuenta->id])}}">
                                             <div class="h-full flex items-center border-gray-200 border p-4 transform  hover:scale-105 transition duration-300 relative bg-clip-border rounded-3xl bg-white text-gray-700 shadow-md">
                                                 <div class="flex-grow">
-                                                    <h2 class="text-lg text-center  font-semibold mb-2">Factura {{$cobrarcuetna->id}}</h2>
-                                                    <h2 class="text-gray-900 title-font font-medium">{{$cobrarcuetna->proveedor->marca}}</h2>
-                                                    <p class="text-gray-500">{{$cobrarcuetna->proveedor->modelo}} {{$cobrarcuetna->proveedor->year}} {{$cobrarcuetna->proveedor->placas}} {{$cobrarcuetna->proveedor->serie}}</p>
+                                                    <h2 class="text-lg text-center  font-semibold mb-2">{{$pagarcuenta->proveedor->nombre}}</h2>
+                                                    <h2 class="text-lg text-center  font-semibold mb-2">RFC:{{$pagarcuenta->proveedor->rfc}}</h2>
+                                                    <h2 class="text-lg text-center  font-semibold mb-2">Número de Factura: {{$pagarcuenta->numero_factura}}</h2>
+                                                    <h2 class="text-gray-900 title-font font-medium">{{$pagarcuenta->proveedor->marca}}</h2>
+                                                    <p class="text-gray-500">{{$pagarcuenta->proveedor->modelo}} {{$pagarcuenta->proveedor->year}} {{$pagarcuenta->proveedor->placas}} {{$pagarcuenta->proveedor->serie}}</p>
                                                     <div class=" p-3 rounded-2xl mt-4">
-                                                        <h3 class="text-md font-semibold mb-1">Información del pagarcuenta</h3>
-                                                        <p class="text-gray-600 mb-2">Fecha de pagarcuenta: {{$cobrarcuetna->fecha_emision}}</p>
-                                                        <p class="text-gray-600 mb-2">Fecha de pagarcuenta: {{$cobrarcuetna->fecha_vencimiento}}</p>
-                                                        <p class="text-gray-600 mb-2">Tipo de pagarcuenta: {{$cobrarcuetna->tipo_pagarcuenta}}</p>
-                                                        <p class="text-gray-600 mb-2">Costo: {{$cobrarcuetna->costo_pagarcuenta}}</p>
-                                                        <p class="text-gray-600 mb-2">Kilometraje: {{$cobrarcuetna->kilometraje}}</p>
+                                                        <h3 class="text-md font-semibold mb-1">Información del la cuenta por pagar</h3>
+                                                        <p class="text-gray-600 mb-2">Fecha de emisión: {{$pagarcuenta->fecha_emision}}</p>
+                                                        <p class="text-gray-600 mb-2">Fecha de vencimiento: {{$pagarcuenta->fecha_vencimiento}}</p>
+                                                        <p class="text-gray-600 mb-2">Monto total: {{$pagarcuenta->monto_total}}</p>
+                                                        <p class="text-gray-600 mb-2">Monto pagado: {{$pagarcuenta->monto_pagado}}</p>
+                                                        <p class="text-gray-600 mb-2">Estatus: {{$pagarcuenta->estatus}}</p>
 
                                                         <!-- Agrega más detalles si es necesario -->
                                                     </div>
                                                     <div class="bg-gray-100 p-3 rounded-2xl mt-4">
-                                                        <h3 class="text-md font-semibold mb-1">Detalles del pagarcuenta </h3>
-                                                        <p class="text-gray-600 mb-2">{{$cobrarcuetna->detalle_pagarcuenta}}</p>
+                                                        <h3 class="text-md font-semibold mb-1">Detalles Adicionales de la factura</h3>
+                                                        <p class="text-gray-600 mb-2">{{$pagarcuenta->detalles_adicionales}}</p>
 
                                                         <!-- Agrega más detalles si es necesario -->
                                                     </div>
