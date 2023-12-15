@@ -87,6 +87,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/vehiculo/{id}/recorridos', [RecorridoController::class, 'vehiculoRecorridos'])->name('recorridos.vehiculo');
     Route::get('/recorrido/{recorrido}', [RecorridoController::class, 'edit'])->name('recorrido.edit');
     Route::patch('/recorrido/{recorrido}', [RecorridoController::class, 'update'])->name('recorrido.update');
+    Route::put('/recorridos/{id}/finalizar', [RecorridoController::class, 'finalizarRecorrido'])->name('recorridos.finalizar');
     Route::delete('/recorrido/{recorrido}', [RecorridoController::class, 'destroy'])->name('recorrido.destroy');
 
     //Routes Mantenimiento

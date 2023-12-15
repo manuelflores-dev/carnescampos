@@ -24,7 +24,7 @@ class UpdateCobrarCuentaRequest extends FormRequest
         return [
 
             'cliente_id' => ['sometimes', 'required', 'exists:clientes,id'],
-            'numero_factura' => ['sometimes', 'required', 'unique:cobrar_cuentas,numero_factura,' . $this->route('cobrar_cuentas')],
+            'numero_factura' => ['sometimes', 'required'],
             'fecha_emision' => ['sometimes', 'required', 'date'],
             'fecha_vencimiento' => ['sometimes', 'required', 'date', 'after_or_equal:fecha_emision'],
             'monto_total' => ['sometimes', 'required', 'numeric', 'min:0'],

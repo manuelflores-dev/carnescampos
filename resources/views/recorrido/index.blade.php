@@ -332,8 +332,9 @@
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
+                                                <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detal
                                                 </a>
+
                                             </td>
                                         </tr>
                                         @endif

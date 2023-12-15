@@ -65,18 +65,18 @@
 
                             <div>
                                 <x-input-label for="litros_combustible" :value="__('Cantidad de combustible')" />
-                                <x-text-input id="litros_combustible" name="litros_combustible" type="number" class="mt-1 block w-full" :value="old('litros_combustible')" required autocomplete="litros_combustible" placeholder="Ingresa la cantidad de combustible" />
+                                <x-text-input id="litros_combustible" name="litros_combustible" type="number" class="mt-1 block w-full" :value="old('litros_combustible')" autocomplete="litros_combustible" placeholder="Ingresa la cantidad de combustible" />
                                 <x-input-error class="mt-2" :messages="$errors->get('litros_combustible')" />
                             </div>
 
                             <div>
                                 <x-input-label for="costo_combustible" :value="__('Costo del combustible')" />
-                                <x-text-input id="costo_combustible" name="costo_combustible" type="number" class="mt-1 block w-full" :value="old('costo_combustible')" required autocomplete="costo_combustible" placeholder="Ingresa el costo del combustible" />
+                                <x-text-input id="costo_combustible" name="costo_combustible" type="number" class="mt-1 block w-full" :value="old('costo_combustible')" autocomplete="costo_combustible" placeholder="Ingresa el costo del combustible" />
                                 <x-input-error class="mt-2" :messages="$errors->get('costo_combustible')" />
                             </div>
                             <div>
                                 <x-input-label for="gasolinera" :value="__('Gasolinera')" />
-                                <x-text-input id="gasolinera" name="gasolinera" type="text" class="mt-1 block w-full" :value="old('gasolinera')" required autocomplete="gasolinera" placeholder="Ingresa gasolinera" />
+                                <x-text-input id="gasolinera" name="gasolinera" type="text" class="mt-1 block w-full" :value="old('gasolinera')" autocomplete="gasolinera" placeholder="Ingresa gasolinera" />
                                 <x-input-error class="mt-2" :messages="$errors->get('gasolinera')" />
                             </div>
                         </div>

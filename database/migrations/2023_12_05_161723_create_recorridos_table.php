@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('recorridos', function (Blueprint $table) {
             $table->id();
             $table->string('kilometraje_actual');
-            $table->string('kilometraje_regreso')->nullable();;
-            $table->integer('litros_combustible');
-            $table->float('costo_combustible')->default(0);
-            $table->string('gasolinera');
+            $table->string('kilometraje_regreso')->nullable();
+            $table->integer('litros_combustible')->nullable();
+            $table->float('costo_combustible')->nullable();
+            $table->string('gasolinera')->nullable();
             $table->string('estatus');
 
             $table->unsignedBigInteger('empleado_id')->nullable();

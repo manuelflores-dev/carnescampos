@@ -33,8 +33,6 @@ class RecorridoController extends Controller
      */
     public function store(StoreRecorridoRequest $request)
     {
-        Recorrido::create($request->validated());
-        return to_route('recorrido.index')->with('status', 'Recorrido agregado');
 
         Recorrido::create($request->validated());
 
@@ -92,6 +90,35 @@ class RecorridoController extends Controller
     {
         $recorrido->update($request->validated());
         return to_route('recorrido.index')->with('status', 'Recorrido actualizado');
+    }
+
+    public function finalizarRecorrido(Request $request, $idRecorrido)
+    {
+        // Obtener el recorrido por su ID
+        $recorrido = Recorrido::findOrFail($idRecorrido);
+
+        // Actualizar los campos del recorrido
+        $recorrido->kilometraje_final = $request->input('kilometraje_final');
+        $recorrido->costo_combustible = $request->input('costo_combustible');
+        $recorrido->cantidad_combustible = $request->input('cantidad_combustible');
+        $recorrido->save();
+
+        // Obtener el vehículo relacionado con este recorrido
+        $vehiculo = $recorrido->vehiculo;
+
+        // Actualizar el campo 'estatus' del vehículo
+        $vehiculo->estatus = 'No disponible';
+        $vehiculo->save();
+
+        // Obtener el empleado relacionado con este recorrido
+        $empleado = $recorrido->empleado;
+
+        // Actualizar el campo 'estatus' del empleado
+        $empleado->estatus = 'Disponible';
+        $empleado->save();
+
+        // Redireccionar o devolver la respuesta necesaria
+        // ...
     }
 
     /**
