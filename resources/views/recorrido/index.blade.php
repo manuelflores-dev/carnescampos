@@ -13,6 +13,7 @@
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-red-600	flex flex-wrap items-center text-lg justify-center">
                 <a class="mr-5 hover:text-red-600" href="{{route('dashboard')}}">Regresar</a>
                 <a class="mr-5 hover:text-red-600" href="{{route('recorrido.create')}}">Agregar recorrido</a>
+                <a class="mr-5 hover:text-red-600" href="{{route('recorrido.pdf')}}">Generar PDF</a>
             </nav>
             <form action="{{ route('buscar.recorrido') }}" method="GET">
                 <x-text-input id="recorrido" name="recorrido" type="text" autofocus placeholder="Buscar por vehículo" />

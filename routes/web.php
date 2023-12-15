@@ -17,6 +17,7 @@ use App\Models\Mantenimiento;
 use App\Models\PagarCuenta;
 use App\Models\Proveedor;
 use App\Models\Recorrido;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,7 @@ Route::middleware('auth')->group(function () {
     //Routes Recorrido
     Route::get('/recorrido/crear', [RecorridoController::class, 'create'])->name('recorrido.create');
     Route::get('/recorrido', [RecorridoController::class, 'index'])->name('recorrido.index');
+    Route::get('/generar-pdf-recorrido', [PDFController::class, 'generarPDF'])->name('recorrido.pdf');
     Route::post('/recorrido', [RecorridoController::class, 'store'])->name('recorrido.store');
     Route::get('/buscar-recorrido', [RecorridoController::class, 'buscar'])->name('buscar.recorrido');
     Route::get('/empleado/{id}/recorridos', [RecorridoController::class, 'empleadoRecorridos'])->name('recorridos.empleado');
