@@ -98,16 +98,17 @@ class RecorridoController extends Controller
         $recorrido = Recorrido::findOrFail($idRecorrido);
 
         // Actualizar los campos del recorrido
-        $recorrido->kilometraje_final = $request->input('kilometraje_final');
+        $recorrido->kilometraje_regreso = $request->input('kilometraje_regreso');
         $recorrido->costo_combustible = $request->input('costo_combustible');
-        $recorrido->cantidad_combustible = $request->input('cantidad_combustible');
+        $recorrido->litros_combustible = $request->input('cantidad_combustible');
+        $recorrido->estatus = 'Disponible';
         $recorrido->save();
 
         // Obtener el vehículo relacionado con este recorrido
         $vehiculo = $recorrido->vehiculo;
 
         // Actualizar el campo 'estatus' del vehículo
-        $vehiculo->estatus = 'No disponible';
+        $vehiculo->estatus = 'Disponible';
         $vehiculo->save();
 
         // Obtener el empleado relacionado con este recorrido

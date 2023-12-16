@@ -66,6 +66,12 @@
                                                 Placas
                                             </th>
                                             <th scope="col" class="px-6 py-3">
+                                                KM Inincial
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                KM final
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
                                                 Cantidad de combustible
                                             </th>
                                             <th scope="col" class="px-6 py-3">
@@ -113,6 +119,12 @@
                                                 {{ $recorrido->vehiculo->placas}}
                                             </td>
                                             <td class="px-6 py-4">
+                                                {{ $recorrido->kilometraje_actual}}
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                {{ $recorrido->kilometraje_regreso}}
+                                            </td>
+                                            <td class="px-6 py-4">
                                                 {{ $recorrido->litros_combustible }} Litros
                                             </td>
                                             <td class="px-6 py-4">
@@ -137,6 +149,7 @@
                                             <td class="px-6 py-4">
                                                 <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
                                                 </a>
+
                                             </td>
                                         </tr>
                                         @endforeach
