@@ -99,7 +99,7 @@ class RecorridoController extends Controller
 
         // Actualizar los campos del recorrido
         $recorrido->kilometraje_regreso = $request->input('kilometraje_regreso');
-        $recorrido->costo_combustible = $request->input('costo_combustible');
+        $recorrido->gasolinera = $request->input('gasolinera');
         $recorrido->litros_combustible = $request->input('cantidad_combustible');
         $recorrido->estatus = 'Disponible';
         $recorrido->save();
@@ -120,6 +120,7 @@ class RecorridoController extends Controller
 
         // Redireccionar o devolver la respuesta necesaria
         // ...
+        return to_route('recorrido.index')->with('status', 'Recorrido actualizado');
     }
 
     /**

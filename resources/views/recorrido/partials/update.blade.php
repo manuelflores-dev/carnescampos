@@ -79,7 +79,7 @@
             </div>
             <div>
                 <x-input-label for="kilometraje_regreso" :value="__('Kilometraje final')" />
-                <x-text-input autofocus id="kilometraje_regreso" name="kilometraje_regreso" type="text" class="mt-1 block w-full" :value=" old('kilometraje_regreso', $recorrido->kilometraje_regreso) " required autocomplete="kilometraje_regreso" placeholder="" />
+                <x-text-input id="kilometraje_regreso" name="kilometraje_regreso" type="text" class="mt-1 block w-full" :value=" old('kilometraje_regreso', $recorrido->kilometraje_regreso) " required autocomplete="kilometraje_regreso" placeholder="" />
                 <x-input-error class="mt-2" :messages="$errors->get('area')" />
             </div>
         </div>
@@ -90,11 +90,11 @@
 
                 <div class="flex items-center justify-center">
                     <label class="inline-flex items-center">
-                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="Disponible" @if($recorrido->estatus=="Disponible") checked autofocus @endif>
+                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="Disponible" @if($recorrido->estatus=="Disponible") checked @endif>
                         <span class="ml-2 text-gray-700">Disponible</span>
                     </label>
                     <label class="inline-flex items-center ml-6">
-                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="En ruta" @if($recorrido->estatus=="En ruta") checked autofocus @endif>
+                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="En ruta" @if($recorrido->estatus=="En ruta") checked @endif>
                         <span class="ml-2 text-gray-700">En ruta</span>
                     </label>
                 </div>
