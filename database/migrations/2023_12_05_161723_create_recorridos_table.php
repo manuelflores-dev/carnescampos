@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('litros_combustible')->nullable();
             $table->float('costo_combustible')->nullable();
             $table->string('gasolinera')->nullable();
-            $table->string('estatus');
+            $table->string('estatus')->default('En ruta');
 
             $table->unsignedBigInteger('empleado_id')->nullable();
             $table->unsignedBigInteger('vehiculo_id')->nullable();

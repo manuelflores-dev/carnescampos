@@ -96,8 +96,6 @@
                                     </label>
                                 </div>
                             </div>
-
-
                         </div>
                         </p>
                         <div class="flex justify-center">
