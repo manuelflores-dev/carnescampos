@@ -34,12 +34,16 @@
                             <div>
                                 <label for="empleado_id" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
                                     Conductor</label>
-                                <select require name="empleado_id" class="block w-full py-2 px-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-400 dark:focus:border-indigo-600 focus:ring-red-400 dark:focus:ring-indigo-600 rounded-2xl shadow-lg">
+                                <select required name="empleado_id" class="block w-full py-2 px-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-400 dark:focus:border-indigo-600 focus:ring-red-400 dark:focus:ring-indigo-600 rounded-2xl shadow-lg">
                                     <option selected>Seleccionar empleado que sera conductor</option>
-                                    @foreach ($empleados as $empleado)
+                                    @foreach ($empleados as $empleado) @if ($empleado->estatus == 'Disponible')
                                     <option value="{{ $empleado->id }}">{{ $empleado->nombre }} | Área:
                                         {{ $empleado->area }}
                                     </option>
+                                    @endif
+                                    @if ($empleado->estatus == 'No disponible')
+                                    <option>No hay conductores disponibles</option>
+                                    @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -47,12 +51,16 @@
                             <div>
                                 <label for="vehiculo_id" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Vehículo
                                 </label>
-                                <select require name="vehiculo_id" class="block w-full py-2 px-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-400 dark:focus:border-indigo-600 focus:ring-red-400 dark:focus:ring-indigo-600 rounded-2xl shadow-lg">
+                                <select required name="vehiculo_id" class="block w-full py-2 px-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-400 dark:focus:border-indigo-600 focus:ring-red-400 dark:focus:ring-indigo-600 rounded-2xl shadow-lg">
                                     <option selected>Seleccionar Vehículo</option>
-                                    @foreach ($vehiculos as $vehiculo)
+                                    @foreach ($vehiculos as $vehiculo) @if ($vehiculo->estatus == 'Disponible')
                                     <option value="{{ $vehiculo->id }}">{{ $vehiculo->marca }} |
                                         {{ $vehiculo->modelo }} | Placas: {{ $vehiculo->placas }} | Serie: {{ $vehiculo->serie }} | Año: {{ $vehiculo->year }}
                                     </option>
+                                    @endif
+                                    @if ($vehiculo->estatus == 'No disponible')
+                                    <option>No hay vehiculos disponibles</option>
+                                    @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -62,7 +70,11 @@
                                 <x-text-input id="kilometraje_actual" name="kilometraje_actual" type="text" class="mt-1 block w-full" :value="old('kilometraje_actual')" required autocomplete="kilometraje_actual" placeholder="Ingresa kilometraje actual" />
                                 <x-input-error class="mt-2" :messages="$errors->get('kilometraje_actual')" />
                             </div>
-
+                            <div>
+                                <x-input-label for="costo_combustible" :value="__('Monto asignado para combustible')" />
+                                <x-text-input required id="costo_combustible" name="costo_combustible" type="number" class="mt-1 block w-full" :value="old('costo_combustible')" autocomplete="costo_combustible" placeholder="Ingresa cantidad de dinero" />
+                                <x-input-error class="mt-2" :messages="$errors->get('costo_combustible')" />
+                            </div>
                             <div>
                                 <x-input-label for="litros_combustible" :value="__('Cantidad de combustible')" />
                                 <x-text-input id="litros_combustible" name="litros_combustible" type="number" class="mt-1 block w-full" :value="old('litros_combustible')" autocomplete="litros_combustible" placeholder="Ingresa la cantidad de combustible" />
@@ -70,33 +82,12 @@
                             </div>
 
                             <div>
-                                <x-input-label for="costo_combustible" :value="__('Costo del combustible')" />
-                                <x-text-input id="costo_combustible" name="costo_combustible" type="number" class="mt-1 block w-full" :value="old('costo_combustible')" autocomplete="costo_combustible" placeholder="Ingresa el costo del combustible" />
-                                <x-input-error class="mt-2" :messages="$errors->get('costo_combustible')" />
-                            </div>
-                            <div>
                                 <x-input-label for="gasolinera" :value="__('Gasolinera')" />
                                 <x-text-input id="gasolinera" name="gasolinera" type="text" class="mt-1 block w-full" :value="old('gasolinera')" autocomplete="gasolinera" placeholder="Ingresa gasolinera" />
                                 <x-input-error class="mt-2" :messages="$errors->get('gasolinera')" />
                             </div>
                         </div>
-                        <div>
-                            <div class="mb-6 " hidden>
 
-                                <h2 class="text-xl font-bold mb-4 text-center">Estatus</h2>
-
-                                <div class="flex items-center justify-center">
-                                    <label class="inline-flex items-center">
-                                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="Disponible">
-                                        <span class="ml-2 text-gray-700">Disponible</span>
-                                    </label>
-                                    <label class="inline-flex items-center ml-6">
-                                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="En ruta" checked>
-                                        <span class="ml-2 text-gray-700">En ruta</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
                         </p>
                         <div class="flex justify-center">
                             <div class="text-center lg:text-center">

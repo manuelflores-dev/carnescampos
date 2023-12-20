@@ -14,6 +14,10 @@
     <form method="post" action="{{ route('recorrido.update', $recorrido) }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')
+        <hr class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-red-800 to-transparent opacity-25 dark:opacity-100" />
+        <p class="mt-1 text-center text-sm text-gray-600 dark:text-gray-400">
+            {{ __("Información del empleado.") }}
+        </p>
         <div class="grid gap-6 mb-6 md:grid-cols-3">
             <div>
                 <x-input-label for="conductor" :value="__('Conductor')" />
@@ -29,6 +33,9 @@
             </div>
         </div>
         <hr class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-red-800 to-transparent opacity-25 dark:opacity-100" />
+        <p class="mt-1 text-center text-sm text-gray-600 dark:text-gray-400">
+            {{ __("Información del vehículo.") }}
+        </p>
         <div class="grid gap-6 mb-6 md:grid-cols-5">
             <div>
                 <x-input-label for="marca" :value="__('Vehículo')" />
@@ -56,7 +63,7 @@
         <p class="mt-1 text-center text-sm text-gray-600 dark:text-gray-400">
             {{ __("En esta seccion puede actualizar la información del recorrido.") }}
         </p>
-        <div class="grid gap-6 mb-6 md:grid-cols-5">
+        <div class="grid gap-6 mb-6 md:grid-cols-4">
             <div>
                 <x-input-label for="litros_combustible" :value="__('Cantidad de combustible')" />
                 <x-text-input id="litros_combustible" name="litros_combustible" type="number" class="mt-1 block w-full" :value=" old('litros_combustible', $recorrido->litros_combustible) " required autocomplete="litros_combustible" placeholder="" />
@@ -82,6 +89,11 @@
                 <x-text-input id="kilometraje_regreso" name="kilometraje_regreso" type="text" class="mt-1 block w-full" :value=" old('kilometraje_regreso', $recorrido->kilometraje_regreso) " required autocomplete="kilometraje_regreso" placeholder="" />
                 <x-input-error class="mt-2" :messages="$errors->get('area')" />
             </div>
+            <div>
+                <x-input-label for="created_at" :value="__('Fecha')" />
+                <x-text-input id="created_at" name="created_at" type="text" class="mt-1 block w-full" :value=" old('created_at', $recorrido->created_at) " required autocomplete="created_at" placeholder="" />
+                <x-input-error class="mt-2" :messages="$errors->get('created_at')" />
+            </div>
         </div>
         <div>
             <div class="mb-6 ">
@@ -90,8 +102,8 @@
 
                 <div class="flex items-center justify-center">
                     <label class="inline-flex items-center">
-                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="Disponible" @if($recorrido->estatus=="Disponible") checked @endif>
-                        <span class="ml-2 text-gray-700">Disponible</span>
+                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="Terminado" @if($recorrido->estatus=="Terminado") checked @endif>
+                        <span class="ml-2 text-gray-700">Terminado</span>
                     </label>
                     <label class="inline-flex items-center ml-6">
                         <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="En ruta" @if($recorrido->estatus=="En ruta") checked @endif>

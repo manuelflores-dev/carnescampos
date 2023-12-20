@@ -77,7 +77,7 @@ class DashboardController extends Controller
     public function gastoCombustible()
     {
         $cantidadVr = Recorrido::where('estatus', 'En ruta')->count();
-        $cantidadVnr = Recorrido::where('estatus', 'Disponible')->count();
+        $cantidadVnr = Recorrido::where('estatus', 'Terminado')->count();
 
         $fechaHoy = Carbon::now()->toDateString();
 

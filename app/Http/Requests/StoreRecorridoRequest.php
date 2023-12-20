@@ -23,7 +23,7 @@ class StoreRecorridoRequest extends FormRequest
     {
         return [
             'kilometraje_actual' => ['required'],
-            'estatus' => ['required'],
+            'costo_combustible' => ['required'],
             'empleado_id' => ['required'],
             'vehiculo_id' => ['required']
         ];

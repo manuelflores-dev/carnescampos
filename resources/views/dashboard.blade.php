@@ -24,7 +24,7 @@
         <div class="flex-1 flex">
             <!-- Barra lateral de navegación (oculta en dispositivos pequeños) -->
             <div class="p-2 bg-secondary-100 w-60 flex-col hidden md:flex" id="sideNav">
-                <h1 class="text-center text-2xl font-semibold mb-6">Menú</h1>
+                <h1 class="text-center text-2xl font-semibold mb-6 ">Menú</h1>
                 <nav>
 
                     <a class="transform  hover:scale-105 transition duration-200 block text-black py-2.5 px-4 my-4 rounded-xl  hover:bg-gradient-to-r hover:from-red-600 hover:to-red-300 hover:text-white" href="{{ route('empleado.index') }}">
@@ -83,10 +83,10 @@
                 </a>
 
                 <!-- Señalador de ubicación -->
-                <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mt-2"></div>
+                <div class="bg-gradient-to-r from-red-300 to-red-500 h-px mt-2"></div>
 
                 <!-- Copyright al final de la navegación lateral -->
-                <p class="mb-1 px-5 py-3 text-left text-xs text-cyan-500">Copyright Carnes Campos</p>
+                <p class="mb-1 px-5 py-3 text-left text-xs text-red-500">Copyright Carnes Campos</p>
 
             </div>
 
@@ -369,7 +369,7 @@
             data: {
                 labels: ['Recorrido terminado', 'En recorrido'],
                 datasets: [{
-                    data: [f, g],
+                    data: [g, f],
                     backgroundColor: ['#274bce', '#8B8B8D'],
                 }]
             },

@@ -101,7 +101,7 @@ class RecorridoController extends Controller
         $recorrido->kilometraje_regreso = $request->input('kilometraje_regreso');
         $recorrido->gasolinera = $request->input('gasolinera');
         $recorrido->litros_combustible = $request->input('cantidad_combustible');
-        $recorrido->estatus = 'Disponible';
+        $recorrido->estatus = 'Terminado';
         $recorrido->save();
 
         // Obtener el vehículo relacionado con este recorrido
