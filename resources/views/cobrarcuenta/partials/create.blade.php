@@ -35,7 +35,7 @@
                                 <label for="cliente_id" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Cliente
                                 </label>
                                 <select require name="cliente_id" class="block w-full py-2 px-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-red-400 dark:focus:border-indigo-600 focus:ring-red-400 dark:focus:ring-indigo-600 rounded-2xl shadow-lg">
-                                    <option selected>Seleccionar Proveedor</option>
+                                    <option selected>Seleccionar Cliente</option>
                                     @foreach ($clientes as $cliente)
                                     <option value="{{ $cliente->id }}">{{ $cliente->nombre }} |
                                         {{ $cliente->rfc }} | {{ $cliente->telefono }}
