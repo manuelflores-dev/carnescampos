@@ -237,78 +237,198 @@
 
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 p-2">
-                        <!-- Sección 3 - Tabla de Autorizaciones Pendientes (disminuida para dispositivos pequeños) -->
-                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 rounded-3xl  shadow-red-500/70 shadow-lg">
-                            <h2 class="text-black text-lg font-semibold pb-4">Facturas</h2>
-                            <div class="my-1"></div> <!-- Espacio de separación -->
-                            <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                            <!-- Línea con gradiente -->
-                            <table class="w-full table-auto text-sm">
-                                <thead>
-                                    <tr class="text-sm leading-normal">
-                                        <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                        </th>
-                                        <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                            Proveedor</th>
-                                        <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                            Factura</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($facpp as $fac)
-                                    <tr class="hover:bg-grey-lighter">
-                                        <td class="py-2 px-4 border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                        <td class="py-2 px-4 border-b border-grey-light">{{$fac->proveedor->nombre}}</td>
-                                        <td class="py-2 px-4 border-b border-grey-light"></td>
-                                        <td class="px-6 py-4">
-                                            <a href="" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                                Ver factura</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    <!-- Añade más filas aquí como la anterior para cada autorización pendiente -->
-                                </tbody>
-                            </table>
-                            <!-- Botón "Ver más" para la tabla de Autorizaciones Pendientes -->
 
+                        <div class="relative overflow-x-auto  sm:rounded-3xl bg-white p-4 rounded-3xl shadow-red-500/70 shadow-lg">
+                            <!-- Sección 3 - Tabla de Autorizaciones Pendientes (disminuida para dispositivos pequeños) -->
+                            <div>
+                                <h2 class="text-black text-lg font-semibold pb-4">Vehículos en recorrido pendientes en Finalizar</h2>
+                                <div class="my-1"></div> <!-- Espacio de separación -->
+                                <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
+                                <!-- Línea con gradiente -->
+                                <div>
+                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
+
+                                                <th scope="col" class="px-6 py-3">
+                                                    Conductor
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Vehículo
+                                                </th>
+
+                                                <th scope="col" class="px-6 py-3">
+                                                    Fecha
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($recorridos as $recorrido)
+                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+
+
+                                                    <div class="pl-3">
+                                                        <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
+                                                        </div>
+                                                        <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    <div class="pl-3">
+                                                        <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
+                                                        </div>
+                                                        <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
+                                                        </div>
+
+                                                        <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {{ $recorrido->vehiculo->created_at}}
+                                                </td>
+                                                <td>
+                                                    <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Finalizar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Botón "Ver más" para la tabla de Autorizaciones Pendientes -->
+
+                            </div>
                         </div>
 
-                        <!-- Sección 4 - Tabla de Transacciones (disminuida para dispositivos pequeños) -->
-                        <!-- Sección 3 - Tabla de Autorizaciones Pendientes (disminuida para dispositivos pequeños) -->
-                        <div class="transform  hover:scale-105 transition duration-300 bg-white p-4 rounded-3xl shadow-red-500/70 shadow-lg">
-                            <h2 class="text-black text-lg font-semibold pb-4">Vehiculos en recorrido</h2>
-                            <div class="my-1"></div> <!-- Espacio de separación -->
-                            <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                            <!-- Línea con gradiente -->
-                            <table class="w-full table-auto text-sm">
-                                <thead>
-                                    <tr class="text-sm leading-normal">
-                                        <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                        </th>
-                                        <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                            Vehículo</th>
-                                        <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">
-                                            Conductor</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                        <div class="relative overflow-x-auto  sm:rounded-3xl bg-white p-4 rounded-3xl shadow-red-500/70 shadow-lg">
+                            <!-- Sección 3 - Tabla de Autorizaciones Pendientes (disminuida para dispositivos pequeños) -->
+                            <div>
+                                <h2 class="text-black text-lg font-semibold pb-4">Facturas de cuentas por cobrar pendientes en Finalizar</h2>
+                                <div class="my-1"></div> <!-- Espacio de separación -->
+                                <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
+                                <!-- Línea con gradiente -->
+                                <div>
+                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
 
-                                    <tr class="hover:bg-grey-lighter">
-                                        <td class="py-2 px-4 border-b border-grey-light"><img src="https://via.placeholder.com/40" alt="Foto Perfil" class="rounded-full h-10 w-10"></td>
-                                        <td class="py-2 px-4 border-b border-grey-light"></td>
-                                        <td class="py-2 px-4 border-b border-grey-light"></td>
-                                        <td class="px-6 py-4">
-                                            <a href="" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar
-                                                Finalizar recorrido</a>
-                                        </td>
-                                    </tr>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Proveedor
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Monto
+                                                </th>
 
-                                    <!-- Añade más filas aquí como la anterior para cada autorización pendiente -->
-                                </tbody>
-                            </table>
-                            <!-- Botón "Ver más" para la tabla de Autorizaciones Pendientes -->
+                                                <th scope="col" class="px-6 py-3">
+                                                    Fecha de vencimiento
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
 
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($finalizarpc as $recorrido)
+                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+
+
+                                                    <div class="pl-3">
+                                                        <div class="text-base font-semibold">{{ $recorrido->proveedor->nombre}}
+                                                        </div>
+                                                        <div class="font-normal text-gray-500">{{ $recorrido->proveedor->rfc}}
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {{ $recorrido->monto_total}}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {{ $recorrido->fecha_vencimiento}}
+                                                </td>
+                                                <td>
+                                                    <a href="pagarcuenta/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Finalizar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Botón "Ver más" para la tabla de Autorizaciones Pendientes -->
+
+                            </div>
                         </div>
+
+                        <div class="relative overflow-x-auto  sm:rounded-3xl bg-white p-4 rounded-3xl shadow-red-500/70 shadow-lg">
+                            <!-- Sección 3 - Tabla de Autorizaciones Pendientes (disminuida para dispositivos pequeños) -->
+                            <div>
+                                <h2 class="text-black text-lg font-semibold pb-4">Finalizar facturas de cuentas por cobrar pendientes</h2>
+                                <div class="my-1"></div> <!-- Espacio de separación -->
+                                <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
+                                <!-- Línea con gradiente -->
+                                <div>
+                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
+
+                                                <th scope="col" class="px-6 py-3">
+                                                    Cliente
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+                                                    Monto
+                                                </th>
+
+                                                <th scope="col" class="px-6 py-3">
+                                                    Fecha de vencimiento
+                                                </th>
+                                                <th scope="col" class="px-6 py-3">
+
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($finalizarcc as $recorrido)
+                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+
+
+                                                    <div class="pl-3">
+                                                        <div class="text-base font-semibold">{{ $recorrido->cliente->nombre}}
+                                                        </div>
+                                                        <div class="font-normal text-gray-500">{{ $recorrido->cliente->rfc}}
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td class="px-6 py-4">
+                                                    {{ $recorrido->monto_total}}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {{ $recorrido->fecha_vencimiento}}
+                                                </td>
+                                                <td>
+                                                    <a href="pagarcuenta/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Finalizar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Botón "Ver más" para la tabla de Autorizaciones Pendientes -->
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -34,6 +34,7 @@ class DashboardController extends Controller
         $numeroviajes = $datosRecorridos['numeroviajes'];
         $cantidadvr = $datosRecorridos['cantidadvr'];
         $cantidadvnr = $datosRecorridos['cantidadvnr'];
+        $recorridos = $datosRecorridos['finalizarR'];
 
         $gastom = $datosManteniminetos['gastom'];
         $numerom = $datosManteniminetos['numerom'];
@@ -47,10 +48,12 @@ class DashboardController extends Controller
         $cantidadpendientes = $datosFacPagar['cantidadpendientes'];
         $cantidadpagadas = $datosFacPagar['cantidadpagadas'];
         $facpp = $datosFacPagar['facpp'];
+        $finalizarpc = $datosFacPagar['finalizarpc'];
 
         $cantidadpendientesc = $datosFacCobrar['cantidadpendientesc'];
         $cantidadpagadasc = $datosFacCobrar['cantidadpagadasc'];
         $facpc = $datosFacCobrar['facpc'];
+        $fcc = $datosFacCobrar['fcc'];
 
         // Pasa los datos a la vista 'index'
         //return view('dashboard', compact('costocombustible', 'numeroviajes'));
@@ -60,6 +63,7 @@ class DashboardController extends Controller
             ->with('numeroviajes', $numeroviajes)
             ->with('cantidadvr', $cantidadvr)
             ->with('cantidadvnr', $cantidadvnr)
+            ->with('recorridos', $recorridos)
             ->with('gastopagar', $gastopagar)
             ->with('numeropagar', $numeropagar)
             ->with('cobrar', $gastocobrar)
@@ -71,11 +75,14 @@ class DashboardController extends Controller
             ->with('cc1', $cantidadpagadasc)
             ->with('cc2', $cantidadpendientesc)
             ->with('facpp', $facpp)
+            ->with('finalizarpc', $finalizarpc)
+            ->with('finalizarcc', $fcc)
             ->with('facpc ', $facpc);
     }
 
     public function gastoCombustible()
     {
+        $finalizarR = Recorrido::where('estatus', 'en ruta')->take(3)->get();
         $cantidadVr = Recorrido::where('estatus', 'En ruta')->count();
         $cantidadVnr = Recorrido::where('estatus', 'Terminado')->count();
 
@@ -87,7 +94,8 @@ class DashboardController extends Controller
             'costocombustible' => $costocombustible,
             'numeroviajes' => $numeroviajes,
             'cantidadvr' => $cantidadVr,
-            'cantidadvnr' => $cantidadVnr
+            'cantidadvnr' => $cantidadVnr,
+            'finalizarR' => $finalizarR,
         ];
     }
 
@@ -137,6 +145,8 @@ class DashboardController extends Controller
         // Obtener todas las facturas
         $facturas = PagarCuenta::all();
 
+        $finalizarPC = PagarCuenta::where('estatus', 'Pendiente')->take(3)->get();
+
         // Contar el número de facturas con estatus "pendiente"
         $cantidadPendientes = PagarCuenta::where('estatus', 'Pendiente')->count();
 
@@ -147,6 +157,7 @@ class DashboardController extends Controller
             'facpp' => $facturas,
             'cantidadpendientes' => $cantidadPendientes,
             'cantidadpagadas' => $cantidadPagadas,
+            'finalizarpc' => $finalizarPC,
         ];
     }
 
@@ -155,6 +166,7 @@ class DashboardController extends Controller
         // Obtener todas las facturas
         $facturas = CobrarCuenta::all();
 
+        $fCC = CobrarCuenta::where('estatus', 'Pendiente')->take(3)->get();
         // Contar el número de facturas con estatus "pendiente"
         $cantidadPendientesc = CobrarCuenta::where('estatus', 'Pendiente')->count();
 
@@ -165,6 +177,7 @@ class DashboardController extends Controller
             'facpc' => $facturas,
             'cantidadpendientesc' => $cantidadPendientesc,
             'cantidadpagadasc' => $cantidadPagadasc,
+            'fcc' => $fCC,
         ];
     }
 }
