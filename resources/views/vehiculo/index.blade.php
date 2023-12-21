@@ -128,7 +128,7 @@
 
                         <section class="text-gray-600 body-font">
                             <div class="container px-5 mx-auto">
-                                <div class="flex flex-wrap-m-2">
+                                <div class="flex flex-wrap -m-2">
                                     @foreach ($vehiculos as $vehiculo)
                                     <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
                                         <a href="vehiculo/{{ $vehiculo->id }}">

@@ -35,389 +35,389 @@
 
                     <div id="employeeTable" class="hidden">
                         <section>
-                            <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
-                                <div class="mb-6">
-                                    <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02" role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
-                                        <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
-                                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                                <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                                    <tr>
 
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Conductor
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Vehículo
-                                                        </th>
+                            <div class="mb-6">
+                                <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02" role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                <tr>
 
-                                                        <th scope="col" class="px-6 py-3">
-                                                            KM Inincial
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            KM final
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Costo del combustible
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Cantidad de combustible
-                                                        </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Conductor
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Vehículo
+                                                    </th>
 
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Gasolinera
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Estado del recorrido
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Fecha
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Detalles
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($recorridos as $recorrido)
-                                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                    <th scope="col" class="px-6 py-3">
+                                                        KM Inincial
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        KM final
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Costo del combustible
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Cantidad de combustible
+                                                    </th>
 
-                                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Gasolinera
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Estado del recorrido
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($recorridos as $recorrido)
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
 
 
-                                                            <div class="pl-3">
-                                                                <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
-                                                                </div>
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
-                                                                </div>
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
                                                             </div>
-                                                        </th>
-                                                        <td class="px-6 py-4">
-                                                            <div class="pl-3">
-                                                                <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
-                                                                </div>
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
-                                                                </div>
-
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
-                                                                </div>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
                                                             </div>
-                                                        </td>
-
-
-                                                        <td class="px-6 py-4">
-                                                            {{ $recorrido->kilometraje_actual}}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->kilometraje_regreso != NULL)
-                                                            {{ $recorrido->kilometraje_regreso}}
-                                                            @endif
-                                                            @if($recorrido->kilometraje_regreso == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            $ {{ $recorrido->costo_combustible }}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->litros_combustible != NULL)
-                                                            {{ $recorrido->litros_combustible}} Litros
-                                                            @endif
-                                                            @if($recorrido->litros_combustible == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->gasolinera != NULL)
-                                                            {{ $recorrido->gasolinera}}
-                                                            @endif
-                                                            @if($recorrido->gasolinera == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-
-
-                                                        <td class="px-6 py-4">
-                                                            <div class="flex items-center">
-                                                                @if($recorrido->estatus== "Terminado")
-                                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
-                                                                @endif
-                                                                @if($recorrido->estatus== "En ruta")
-                                                                <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
-                                                                @endif
-                                                                {{ $recorrido->estatus }}
+                                                        </div>
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
                                                             </div>
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            {{ $recorrido->vehiculo->created_at}}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
-                                                            </a>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
+                                                            </div>
 
-                                                        </td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+
+                                                    <td class="px-6 py-4">
+                                                        {{ $recorrido->kilometraje_actual}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->kilometraje_regreso != NULL)
+                                                        {{ $recorrido->kilometraje_regreso}}
+                                                        @endif
+                                                        @if($recorrido->kilometraje_regreso == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        $ {{ $recorrido->costo_combustible }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->litros_combustible != NULL)
+                                                        {{ $recorrido->litros_combustible}} Litros
+                                                        @endif
+                                                        @if($recorrido->litros_combustible == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->gasolinera != NULL)
+                                                        {{ $recorrido->gasolinera}}
+                                                        @endif
+                                                        @if($recorrido->gasolinera == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+
+
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex items-center">
+                                                            @if($recorrido->estatus== "Terminado")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                            @endif
+                                                            @if($recorrido->estatus== "En ruta")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                            @endif
+                                                            {{ $recorrido->estatus }}
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $recorrido->vehiculo->created_at}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
+                                </div>
 
-                                    <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-profile02" role="tabpanel" aria-labelledby="tabs-profile-tab02">
-                                        <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
-                                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                                <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                                    <tr>
+                                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-profile02" role="tabpanel" aria-labelledby="tabs-profile-tab02">
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                <tr>
 
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Conductor
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Vehículo
-                                                        </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Conductor
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Vehículo
+                                                    </th>
 
-                                                        <th scope="col" class="px-6 py-3">
-                                                            KM Inincial
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            KM final
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Costo del combustible
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Cantidad de combustible
-                                                        </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        KM Inincial
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        KM final
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Costo del combustible
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Cantidad de combustible
+                                                    </th>
 
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Gasolinera
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Estado del recorrido
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Fecha
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Detalles
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($recorridos as $recorrido) @if ($recorrido->estatus == 'En ruta')
-                                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Gasolinera
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Estado del recorrido
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($recorridos as $recorrido) @if ($recorrido->estatus == 'En ruta')
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
-                                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
 
 
-                                                            <div class="pl-3">
-                                                                <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
-                                                                </div>
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
-                                                                </div>
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
                                                             </div>
-                                                        </th>
-                                                        <td class="px-6 py-4">
-                                                            <div class="pl-3">
-                                                                <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
-                                                                </div>
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
-                                                                </div>
-
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
-                                                                </div>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
                                                             </div>
-                                                        </td>
-
-
-                                                        <td class="px-6 py-4">
-                                                            {{ $recorrido->kilometraje_actual}}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->kilometraje_regreso != NULL)
-                                                            {{ $recorrido->kilometraje_regreso}}
-                                                            @endif
-                                                            @if($recorrido->kilometraje_regreso == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            $ {{ $recorrido->costo_combustible }}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->litros_combustible != NULL)
-                                                            {{ $recorrido->litros_combustible}} Litros
-                                                            @endif
-                                                            @if($recorrido->litros_combustible == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->gasolinera != NULL)
-                                                            {{ $recorrido->gasolinera}}
-                                                            @endif
-                                                            @if($recorrido->gasolinera == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-
-
-                                                        <td class="px-6 py-4">
-                                                            <div class="flex items-center">
-                                                                @if($recorrido->estatus== "Terminado")
-                                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
-                                                                @endif
-                                                                @if($recorrido->estatus== "En ruta")
-                                                                <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
-                                                                @endif
-                                                                {{ $recorrido->estatus }}
+                                                        </div>
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
                                                             </div>
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            {{ $recorrido->vehiculo->created_at}}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
-                                                            </a>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
+                                                            </div>
 
-                                                        </td>
-                                                    </tr>
-                                                    @endif
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+
+                                                    <td class="px-6 py-4">
+                                                        {{ $recorrido->kilometraje_actual}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->kilometraje_regreso != NULL)
+                                                        {{ $recorrido->kilometraje_regreso}}
+                                                        @endif
+                                                        @if($recorrido->kilometraje_regreso == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        $ {{ $recorrido->costo_combustible }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->litros_combustible != NULL)
+                                                        {{ $recorrido->litros_combustible}} Litros
+                                                        @endif
+                                                        @if($recorrido->litros_combustible == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->gasolinera != NULL)
+                                                        {{ $recorrido->gasolinera}}
+                                                        @endif
+                                                        @if($recorrido->gasolinera == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+
+
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex items-center">
+                                                            @if($recorrido->estatus== "Terminado")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                            @endif
+                                                            @if($recorrido->estatus== "En ruta")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                            @endif
+                                                            {{ $recorrido->estatus }}
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $recorrido->vehiculo->created_at}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                @endif
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
+                                </div>
 
-                                    <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-messages02" role="tabpanel" aria-labelledby="tabs-profile-tab02">
-                                        <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
-                                            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                                                <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                                    <tr>
-
-
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Conductor
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Vehículo
-                                                        </th>
-
-                                                        <th scope="col" class="px-6 py-3">
-                                                            KM Inincial
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            KM final
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Costo del combustible
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Cantidad de combustible
-                                                        </th>
-
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Gasolinera
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Estado del recorrido
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Fecha
-                                                        </th>
-                                                        <th scope="col" class="px-6 py-3">
-                                                            Detalles
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($recorridos as $recorrido) @if ($recorrido->estatus == 'Terminado')
-                                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                                        <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-messages02" role="tabpanel" aria-labelledby="tabs-profile-tab02">
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                                <tr>
 
 
-                                                            <div class="pl-3">
-                                                                <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
-                                                                </div>
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
-                                                                </div>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Conductor
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Vehículo
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        KM Inincial
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        KM final
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Costo del combustible
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Cantidad de combustible
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Gasolinera
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Estado del recorrido
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($recorridos as $recorrido) @if ($recorrido->estatus == 'Terminado')
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+
+
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $recorrido->empleado->nombre }}
                                                             </div>
-                                                        </th>
-                                                        <td class="px-6 py-4">
-                                                            <div class="pl-3">
-                                                                <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
-                                                                </div>
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
-                                                                </div>
-
-                                                                <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
-                                                                </div>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->empleado->area }}
                                                             </div>
-                                                        </td>
-
-
-                                                        <td class="px-6 py-4">
-                                                            {{ $recorrido->kilometraje_actual}}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->kilometraje_regreso != NULL)
-                                                            {{ $recorrido->kilometraje_regreso}}
-                                                            @endif
-                                                            @if($recorrido->kilometraje_regreso == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            $ {{ $recorrido->costo_combustible }}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->litros_combustible != NULL)
-                                                            {{ $recorrido->litros_combustible}} Litros
-                                                            @endif
-                                                            @if($recorrido->litros_combustible == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-
-                                                        <td class="px-6 py-4">
-                                                            @if($recorrido->gasolinera != NULL)
-                                                            {{ $recorrido->gasolinera}}
-                                                            @endif
-                                                            @if($recorrido->gasolinera == NULL)
-                                                            <p class="text-red-500">Pendiente</p>
-                                                            @endif
-                                                        </td>
-
-
-                                                        <td class="px-6 py-4">
-                                                            <div class="flex items-center">
-                                                                @if($recorrido->estatus== "Terminado")
-                                                                <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
-                                                                @endif
-                                                                @if($recorrido->estatus== "En ruta")
-                                                                <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
-                                                                @endif
-                                                                {{ $recorrido->estatus }}
+                                                        </div>
+                                                    </th>
+                                                    <td class="px-6 py-4">
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $recorrido->vehiculo->marca}}
                                                             </div>
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            {{ $recorrido->vehiculo->created_at}}
-                                                        </td>
-                                                        <td class="px-6 py-4">
-                                                            <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
-                                                            </a>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->modelo}}
+                                                            </div>
 
-                                                        </td>
-                                                    </tr>
-                                                    @endif
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                            <div class="font-normal text-gray-500">{{ $recorrido->vehiculo->placas}}
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+
+                                                    <td class="px-6 py-4">
+                                                        {{ $recorrido->kilometraje_actual}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->kilometraje_regreso != NULL)
+                                                        {{ $recorrido->kilometraje_regreso}}
+                                                        @endif
+                                                        @if($recorrido->kilometraje_regreso == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        $ {{ $recorrido->costo_combustible }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->litros_combustible != NULL)
+                                                        {{ $recorrido->litros_combustible}} Litros
+                                                        @endif
+                                                        @if($recorrido->litros_combustible == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+
+                                                    <td class="px-6 py-4">
+                                                        @if($recorrido->gasolinera != NULL)
+                                                        {{ $recorrido->gasolinera}}
+                                                        @endif
+                                                        @if($recorrido->gasolinera == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+
+
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex items-center">
+                                                            @if($recorrido->estatus== "Terminado")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                            @endif
+                                                            @if($recorrido->estatus== "En ruta")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                            @endif
+                                                            {{ $recorrido->estatus }}
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $recorrido->vehiculo->created_at}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        <a href="recorrido/{{ $recorrido->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                @endif
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+
                         </section>
                     </div>
 
@@ -458,7 +458,7 @@
                                                             </div>
                                                             <div>
                                                                 <p class="text-gray-600 mb-2"><strong> Combustible:</strong> {{$reco->litros_combustible}}</p>
-                                                                <p class="text-gray-600 mb-2"><strong> Costo: </strong>{{$reco->costo_combustible}}</p>
+                                                                <p class="text-gray-600 mb-2"><strong> Costo: </strong>${{$reco->costo_combustible}}</p>
                                                                 <p class="text-gray-600 mb-2"><strong> Gasolinera: </strong>{{$reco->gasolinera}}</p>
 
                                                             </div>
