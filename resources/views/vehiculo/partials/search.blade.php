@@ -22,7 +22,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-3xl shadow-red-600/30">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col text-center w-full mb-10">
@@ -145,8 +145,8 @@
                                                 </div>
 
                                                 <div class="flex-grow">
-                                                    <h2 class="text-gray-900 title-font font-medium">{{$vehiculo->marca}}</h2>
-                                                    <p class="text-gray-500">{{$vehiculo->placas}}</p>
+                                                    <h2 class="text-gray-900 title-font font-medium">{{$vehiculo->marca}} {{$vehiculo->modelo}} {{$vehiculo->year}}</h2>
+                                                    <p class="text-gray-500">Placas: {{$vehiculo->placas}} Serie: {{$vehiculo->serie}}</p>
                                                     <p class="text-gray-500">
                                                     <div class="flex items-center">
                                                         @if($vehiculo->estatus== "Disponible")
@@ -157,6 +157,7 @@
                                                         @endif
                                                         {{ $vehiculo->estatus }}
                                                     </div>
+
                                                     </p>
                                                 </div>
                                             </div>

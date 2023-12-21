@@ -54,25 +54,7 @@
                                 <x-input-error class="mt-2" :messages="$errors->get('direccion')" />
                             </div>
                         </div>
-                        <div>
-                            <div class="mb-6 ">
 
-                                <h2 class="text-xl font-bold mb-4 text-center">Estatus</h2>
-
-                                <div class="flex items-center justify-center">
-                                    <label class="inline-flex items-center">
-                                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="Disponible" checked>
-                                        <span class="ml-2 text-gray-700">Disponible</span>
-                                    </label>
-                                    <label class="inline-flex items-center ml-6">
-                                        <input type="radio" class="form-radio h-5 w-5 text-red-600" name="estatus" value="No Disponible">
-                                        <span class="ml-2 text-gray-700">No disponible</span>
-                                    </label>
-                                </div>
-                            </div>
-
-
-                        </div>
                         </p>
                         <div class="flex justify-center">
                             <div class="text-center lg:text-center">

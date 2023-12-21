@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('area');
-            $table->string('estatus');
-            $table->string('telefono');
-            $table->string('direccion');
+            $table->string('estatus')->default('Disponible');
+            $table->string('telefono')->nullable();
+            $table->string('direccion')->nullable();
             $table->timestamps();
         });
     }

@@ -13,8 +13,57 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Dashboard') }} principal
                     </x-nav-link>
+
+                    <!-- Enlace que se muestra en determinadas rutas -->
+                    @if(request()->routeIs('recorrido.index') || request()->routeIs('recorrido.create') || request()->routeIs('recorrido.edit') )
+                    <x-nav-link :href="route('vehiculo.index')">
+                        Vehículos
+                    </x-nav-link>
+                    <x-nav-link :href="route('empleado.index')">
+                        Empleados
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('proveedor.index')|| request()->routeIs('proveedor.create') || request()->routeIs('proveedor.edit'))
+                    <x-nav-link :href="route('pagarcuenta.index')">
+                        Cuentas por pagar
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('pagarcuenta.index')|| request()->routeIs('pagarcuenta.create') || request()->routeIs('pagarcuenta.edit'))
+                    <x-nav-link :href="route('proveedor.index')">
+                        Proveedores
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('empleado.index')|| request()->routeIs('empleado.create') || request()->routeIs('empleado.edit'))
+                    <x-nav-link :href="route('recorrido.index')">
+                        Recorridos
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('cliente.index')|| request()->routeIs('cliente.create') || request()->routeIs('cliente.edit'))
+                    <x-nav-link :href="route('cobrarcuenta.index')">
+                        Cuentas por cobrar
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('vehiculo.index')|| request()->routeIs('vehiculo.create') || request()->routeIs('vehiculo.edit'))
+                    <x-nav-link :href="route('recorrido.index')">
+                        Recorrridos
+                    </x-nav-link>
+                    <x-nav-link :href="route('mantenimiento.index')">
+                        Mantenimientos
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('mantenimiento.index')|| request()->routeIs('mantenimiento.create') || request()->routeIs('mantenimiento.edit'))
+                    <x-nav-link :href="route('vehiculo.index')">
+                        Vehículos
+                    </x-nav-link>
+                    @endif
+                    @if(request()->routeIs('cobrarcuenta.index')|| request()->routeIs('cobrarcuenta.create') || request()->routeIs('cobrarcuenta.edit'))
+                    <x-nav-link :href="route('cliente.index')">
+                        Clientes
+                    </x-nav-link>
+                    @endif
+
                 </div>
             </div>
 
@@ -42,8 +91,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
@@ -88,8 +136,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>

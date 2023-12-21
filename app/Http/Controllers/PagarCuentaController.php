@@ -75,7 +75,18 @@ class PagarCuentaController extends Controller
         $pagarcuenta->update($request->validated());
         return to_route('pagarcuenta.index')->with('status', 'PagarCuenta actualizado');
     }
+    public function finalizarCuenta(Request $request, $idPagarcuenta)
+    {
+        // Obtener el pagarcuenta por su ID
+        $pagarcuenta = PagarCuenta::findOrFail($idPagarcuenta);
 
+        // Actualizar los campos del pagarcuenta
+        $pagarcuenta->monto_pagado = $request->input('monto_pagado');
+        $pagarcuenta->estatus = 'Pagada';
+        $pagarcuenta->save();
+
+        return to_route('pagarcuenta.index')->with('status', 'Recorrido actualizado');
+    }
     /**
      * Remove the specified resource from storage.
      */

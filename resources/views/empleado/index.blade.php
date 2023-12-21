@@ -117,7 +117,7 @@
                             <div class="container px-5 mx-auto">
                                 <div class="flex flex-wrap -m-2">
                                     @foreach ($empleados as $empleado)
-                                    <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+                                    <div class="p-2 lg:w-1/4 md:w-1/2 w-full">
                                         <a href="empleado/{{ $empleado->id }}">
                                             <div class="h-full flex items-center border-gray-200 border p-4 transform  hover:scale-105 transition duration-300 relative bg-clip-border rounded-3xl bg-white text-gray-700 shadow-2xl shadow-blue-600/30">
                                                 <div class="w-16 h-16 mr-4">

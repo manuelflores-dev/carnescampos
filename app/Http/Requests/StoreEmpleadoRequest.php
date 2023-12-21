@@ -26,7 +26,6 @@ class StoreEmpleadoRequest extends FormRequest
             'area' => ['required', 'string',  'max:50'],
             'telefono' => ['required', 'min:10', 'max:10'],
             'direccion' => ['required', 'max:255'],
-            'estatus' => ['required', 'max:50']
         ];
     }
 }

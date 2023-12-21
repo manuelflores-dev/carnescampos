@@ -23,7 +23,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-3xl shadow-red-600/30">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col text-center w-full mb-10">
@@ -128,11 +128,11 @@
 
                         <section class="text-gray-600 body-font">
                             <div class="container px-5 mx-auto">
-                                <div class="flex flex-wrap -m-2">
+                                <div class="flex flex-wrap-m-2">
                                     @foreach ($vehiculos as $vehiculo)
                                     <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
                                         <a href="vehiculo/{{ $vehiculo->id }}">
-                                            <div class="h-full flex items-center border-gray-200 border p-4 transform  hover:scale-105 transition duration-300 relative bg-clip-border rounded-3xl bg-white text-gray-700 shadow-md">
+                                            <div class="h-full flex items-center border-gray-200 border p-4 transform  hover:scale-105 transition duration-300 relative bg-clip-border rounded-3xl bg-white text-gray-700 shadow-2xl shadow-blue-600/30">
                                                 <div class="w-16 h-16 mr-4">
                                                     <svg class="w-[61px] h-[61px] fill-[#ff7070]" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
 
@@ -143,8 +143,8 @@
                                                 </div>
 
                                                 <div class="flex-grow">
-                                                    <h2 class="text-gray-900 title-font font-medium">{{$vehiculo->marca}}</h2>
-                                                    <p class="text-gray-500">{{$vehiculo->placas}}</p>
+                                                    <h2 class="text-gray-900 title-font font-medium">{{$vehiculo->marca}} {{$vehiculo->modelo}} {{$vehiculo->year}}</h2>
+                                                    <p class="text-gray-500">Placas: {{$vehiculo->placas}} Serie: {{$vehiculo->serie}}</p>
                                                     <p class="text-gray-500">
                                                     <div class="flex items-center">
                                                         @if($vehiculo->estatus== "Disponible")

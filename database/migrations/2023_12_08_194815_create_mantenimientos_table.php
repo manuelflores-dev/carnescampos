@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('tipo_mantenimiento');
             $table->string('detalle_mantenimiento');
             $table->string('kilometraje');
-            $table->string('costo_mantenimiento');
+            $table->decimal('costo_mantenimiento');
             $table->date('fecha_mantenimiento');
 
             $table->unsignedBigInteger('vehiculo_id')->nullable();

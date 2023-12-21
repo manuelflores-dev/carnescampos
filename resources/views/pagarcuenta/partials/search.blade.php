@@ -38,55 +38,113 @@
 
                             <!--Tabs navigation-->
                             <ul class="mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0" role="tablist" data-te-nav-ref>
-                                <li role="presentation">
-                                    <a href="#tabs-home" class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#tabs-home" data-te-nav-active role="tab" aria-controls="tabs-home" aria-selected="true">Todas las facturas</a>
+                                <li role="presentation" class="flex-grow basis-0 text-center">
+                                    <a href="#tabs-home02" class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#tabs-home02" data-te-nav-active role="tab" aria-controls="tabs-home02" aria-selected="true">Todas</a>
                                 </li>
-                                <li role="presentation">
-                                    <a href="#tabs-profile" class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#tabs-profile" role="tab" aria-controls="tabs-profile" aria-selected="false">Facturas pendientes</a>
+                                <li role="presentation" class="flex-grow basis-0 text-center">
+                                    <a href="#tabs-profile02" class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#tabs-profile02" role="tab" aria-controls="tabs-profile02" aria-selected="false">Pendientes</a>
                                 </li>
-                                <li role="presentation">
-                                    <a href="#tabs-messages" class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#tabs-messages" role="tab" aria-controls="tabs-messages" aria-selected="false">Facturas pagadas</a>
+                                <li role="presentation" class="flex-grow basis-0 text-center">
+                                    <a href="#tabs-messages02" class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400" data-te-toggle="pill" data-te-target="#tabs-messages02" role="tab" aria-controls="tabs-messages02" aria-selected="false">Pagadas</a>
                                 </li>
 
                             </ul>
-
                             <!--Tabs content-->
                             <div class="mb-6">
-                                <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab" data-te-tab-active>
-                                    Todas las facturas de las cuentas por pagar
-                                    <div data-te-datatable-init>
-                                        <table>
-                                            <thead>
+                                <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-home02" role="tabpanel" aria-labelledby="tabs-home-tab02" data-te-tab-active>
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                 <tr>
-                                                    <th>Número de factura</th>
-                                                    <th>Fecha de emisión</th>
-                                                    <th>Fecha de vencimiento</th>
-                                                    <th>Monto total</th>
-                                                    <th>Monto pagado</th>
-                                                    <th>Detalles adicionales</th>
-                                                    <th>Estatus</th>
-                                                    <th>Proveedor</th>
-                                                    <th>RFC</th>
-                                                    <th>Domicilio</th>
-                                                    <th>Detalles</th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Proveedor
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Numero de factura
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha de emisión
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha de vencimiento
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Monto total
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Monto Pagado
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles adicionales
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Estatus
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($resultados as $pagarcuenta)
-                                                <tr>
-                                                    <td>{{$pagarcuenta->numero_factura}}</td>
-                                                    <td>{{$pagarcuenta->fecha_emision}}</td>
-                                                    <td>{{$pagarcuenta->fecha_vencimiento}}</td>
-                                                    <td>$ {{$pagarcuenta->monto_total}}</td>
-                                                    <td>$ {{$pagarcuenta->monto_pagado}}</td>
-                                                    <td>{{$pagarcuenta->detalles_adicionales}}</td>
-                                                    <td>{{$pagarcuenta->estatus}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->nombre}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->rfc}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->direccion}}</td>
-                                                    <td>
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $pagarcuenta->proveedor->nombre }}
+                                                            </div>
+                                                            <div class="font-normal text-gray-500">{{ $pagarcuenta->proveedor->rfc }}
+                                                            </div>
+                                                            <div class="font-normal text-gray-500">{{ $pagarcuenta->proveedor->correo }}
+                                                            </div>
+                                                        </div>
+                                                    </th>
+
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->numero_factura}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->fecha_emision }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->fecha_vencimiento }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        ${{ $pagarcuenta->monto_total }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($pagarcuenta->monto_pagado != NULL)
+                                                        ${{ $pagarcuenta->monto_pagado}}
+                                                        @endif
+                                                        @if($pagarcuenta->monto_pagado == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->detalles_adicionales }}
+                                                    </td>
+
+
+
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex items-center">
+                                                            @if($pagarcuenta->estatus== "Pagada")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                            @endif
+                                                            @if($pagarcuenta->estatus== "Pendiente")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                            @endif
+                                                            {{ $pagarcuenta->estatus }}
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="px-6 py-4">
                                                         <a href="pagarcuenta/{{ $pagarcuenta->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
                                                         </a>
+
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -94,88 +152,210 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
-                                    Facturas de cuentas por pagar pendientes
-                                    <div data-te-datatable-init>
-                                        <table>
-                                            <thead>
+
+                                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-profile02" role="tabpanel" aria-labelledby="tabs-profile-tab02">
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                 <tr>
-                                                    <th>Número de factura</th>
-                                                    <th>Fecha de emisión</th>
-                                                    <th>Fecha de vencimiento</th>
-                                                    <th>Monto total</th>
-                                                    <th>Monto pagado</th>
-                                                    <th>Detalles adicionales</th>
-                                                    <th>Estatus</th>
-                                                    <th>Proveedor</th>
-                                                    <th>RFC</th>
-                                                    <th>Domicilio</th>
-                                                    <th>Detalles</th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Proveedor
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Numero de factura
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha de emisión
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha de vencimiento
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Monto total
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Monto Pagado
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles adicionales
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Estatus
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($resultados as $pagarcuenta) @if ($pagarcuenta->estatus == 'Pendiente')
-                                                <tr>
-                                                    <td>{{$pagarcuenta->numero_factura}}</td>
-                                                    <td>{{$pagarcuenta->fecha_emision}}</td>
-                                                    <td>{{$pagarcuenta->fecha_vencimiento}}</td>
-                                                    <td>$ {{$pagarcuenta->monto_total}}</td>
-                                                    <td>$ {{$pagarcuenta->monto_pagado}}</td>
-                                                    <td>{{$pagarcuenta->detalles_adicionales}}</td>
-                                                    <td>{{$pagarcuenta->estatus}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->nombre}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->rfc}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->direccion}}</td>
-                                                    <td>
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $pagarcuenta->proveedor->nombre }}
+                                                            </div>
+                                                            <div class="font-normal text-gray-500">{{ $pagarcuenta->proveedor->rfc }}
+                                                            </div>
+                                                            <div class="font-normal text-gray-500">{{ $pagarcuenta->proveedor->correo }}
+                                                            </div>
+                                                        </div>
+                                                    </th>
+
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->numero_factura}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->fecha_emision }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->fecha_vencimiento }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        ${{ $pagarcuenta->monto_total }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($pagarcuenta->monto_pagado != NULL)
+                                                        ${{ $pagarcuenta->monto_pagado}}
+                                                        @endif
+                                                        @if($pagarcuenta->monto_pagado == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->detalles_adicionales }}
+                                                    </td>
+
+
+
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex items-center">
+                                                            @if($pagarcuenta->estatus== "Pagada")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                            @endif
+                                                            @if($pagarcuenta->estatus== "Pendiente")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                            @endif
+                                                            {{ $pagarcuenta->estatus }}
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="px-6 py-4">
                                                         <a href="pagarcuenta/{{ $pagarcuenta->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
                                                         </a>
+
                                                     </td>
                                                 </tr>
-                                                @endIf
+                                                @endif
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
-                                    Facturas de cuentas por pagar pagadas
-                                    <div data-te-datatable-init>
-                                        <table>
-                                            <thead>
+
+                                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block" id="tabs-messages02" role="tabpanel" aria-labelledby="tabs-profile-tab02">
+                                    <div class="relative overflow-x-auto shadow-md sm:rounded-3xl">
+                                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                            <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                                 <tr>
-                                                    <th>Número de factura</th>
-                                                    <th>Fecha de emisión</th>
-                                                    <th>Fecha de vencimiento</th>
-                                                    <th>Monto total</th>
-                                                    <th>Monto pagado</th>
-                                                    <th>Detalles adicionales</th>
-                                                    <th>Estatus</th>
-                                                    <th>Proveedor</th>
-                                                    <th>RFC</th>
-                                                    <th>Domicilio</th>
-                                                    <th>Detalles</th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Proveedor
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Numero de factura
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha de emisión
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Fecha de vencimiento
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Monto total
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Monto Pagado
+                                                    </th>
+
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles adicionales
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Estatus
+                                                    </th>
+                                                    <th scope="col" class="px-6 py-3">
+                                                        Detalles
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($resultados as $pagarcuenta) @if ($pagarcuenta->estatus == 'Pagada')
-                                                <tr>
-                                                    <td>{{$pagarcuenta->numero_factura}}</td>
-                                                    <td>{{$pagarcuenta->fecha_emision}}</td>
-                                                    <td>{{$pagarcuenta->fecha_vencimiento}}</td>
-                                                    <td>$ {{$pagarcuenta->monto_total}}</td>
-                                                    <td>$ {{$pagarcuenta->monto_pagado}}</td>
-                                                    <td>{{$pagarcuenta->detalles_adicionales}}</td>
-                                                    <td>{{$pagarcuenta->estatus}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->nombre}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->rfc}}</td>
-                                                    <td>{{$pagarcuenta->proveedor->direccion}}</td>
-                                                    <td>
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                                                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                                        <div class="pl-3">
+                                                            <div class="text-base font-semibold">{{ $pagarcuenta->proveedor->nombre }}
+                                                            </div>
+                                                            <div class="font-normal text-gray-500">{{ $pagarcuenta->proveedor->rfc }}
+                                                            </div>
+                                                            <div class="font-normal text-gray-500">{{ $pagarcuenta->proveedor->correo }}
+                                                            </div>
+                                                        </div>
+                                                    </th>
+
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->numero_factura}}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->fecha_emision }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->fecha_vencimiento }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        ${{ $pagarcuenta->monto_total }}
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        @if($pagarcuenta->monto_pagado != NULL)
+                                                        ${{ $pagarcuenta->monto_pagado}}
+                                                        @endif
+                                                        @if($pagarcuenta->monto_pagado == NULL)
+                                                        <p class="text-red-500">Pendiente</p>
+                                                        @endif
+                                                    </td>
+                                                    <td class="px-6 py-4">
+                                                        {{ $pagarcuenta->detalles_adicionales }}
+                                                    </td>
+
+
+
+                                                    <td class="px-6 py-4">
+                                                        <div class="flex items-center">
+                                                            @if($pagarcuenta->estatus== "Pagada")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                                                            @endif
+                                                            @if($pagarcuenta->estatus== "Pendiente")
+                                                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                                                            @endif
+                                                            {{ $pagarcuenta->estatus }}
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="px-6 py-4">
                                                         <a href="pagarcuenta/{{ $pagarcuenta->id }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detalles
                                                         </a>
+
                                                     </td>
-                                                </tr> @endIf
+                                                </tr>
+                                                @endif
                                                 @endforeach
                                             </tbody>
+                                        </table>
                                         </table>
                                     </div>
                                 </div>

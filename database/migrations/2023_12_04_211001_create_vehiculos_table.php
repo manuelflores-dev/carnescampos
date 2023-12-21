@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('serie');
             $table->string('year');
             $table->string('kilometros');
-            $table->string('estatus');
+            $table->string('estatus')->default('Disponible');
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('kilometraje_actual');
             $table->string('kilometraje_regreso')->nullable();
-            $table->integer('litros_combustible')->nullable();
-            $table->float('costo_combustible')->nullable();
+            $table->decimal('litros_combustible')->nullable();
+            $table->decimal('costo_combustible')->nullable();
             $table->string('gasolinera')->nullable();
             $table->string('estatus')->default('En ruta');
 

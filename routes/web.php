@@ -127,6 +127,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/proveedor/{id}/pagarcuentas', [PagarCuentaController::class, 'ProveedorPagarCuentas'])->name('pagarcuentas.proveedor');
     Route::get('/pagarcuenta/{pagarcuenta}', [PagarCuentaController::class, 'edit'])->name('pagarcuenta.edit');
     Route::patch('/pagarcuenta/{pagarcuenta}', [PagarCuentaController::class, 'update'])->name('pagarcuenta.update');
+    Route::put('/pagarcuentas/{id}/finalizar', [PagarcuentaController::class, 'finalizarCuenta'])->name('pagarcuenta.finalizar');
     Route::delete('/pagarcuenta/{pagarcuenta}', [PagarCuentaController::class, 'destroy'])->name('pagarcuenta.destroy');
 });
 
