@@ -20,7 +20,14 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            @if ($cobrarcuenta->estatus === 'Pendiente')
+            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow-2xl sm:rounded-3xl">
+                <div class="">
+                    @include('cobrarcuenta.partials.finalizar')
+                </div>
+            </div>
 
+            @endif
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow-2xl sm:rounded-3xl">
                 <div class="">
                     @include('cobrarcuenta.partials.update')

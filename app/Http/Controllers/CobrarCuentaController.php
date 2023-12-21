@@ -77,6 +77,18 @@ class CobrarCuentaController extends Controller
         return to_route('cobrarcuenta.index')->with('status', 'CobrarCuenta actualizado');
     }
 
+    public function finalizarCuenta(Request $request, $idCobrarcuenta)
+    {
+        // Obtener el cobrarcuenta por su ID
+        $cobrarcuenta = CobrarCuenta::findOrFail($idCobrarcuenta);
+
+        // Actualizar los campos del cobrarcuenta
+        $cobrarcuenta->monto_pagado = $request->input('monto_pagado');
+        $cobrarcuenta->estatus = 'Pagada';
+        $cobrarcuenta->save();
+
+        return to_route('cobrarcuenta.index')->with('status', 'Recorrido actualizado');
+    }
     /**
      * Remove the specified resource from storage.
      */

@@ -117,6 +117,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cliente/{id}/cobrarcuentas', [CobrarCuentaController::class, 'clienteCobrarcuentas'])->name('cobrarcuentas.cliente');
     Route::get('/cobrarcuenta/{cobrarcuenta}', [CobrarCuentaController::class, 'edit'])->name('cobrarcuenta.edit');
     Route::patch('/cobrarcuenta/{cobrarcuenta}', [CobrarCuentaController::class, 'update'])->name('cobrarcuenta.update');
+    Route::put('/cobrarcuentas/{id}/finalizar', [CobrarCuentaController::class, 'finalizarCuenta'])->name('cobrarcuenta.finalizar');
     Route::delete('/cobrarcuenta/{cobrarcuenta}', [CobrarCuentaController::class, 'destroy'])->name('cobrarcuenta.destroy');
 
     //Routes Pagar cuentas
@@ -127,7 +128,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/proveedor/{id}/pagarcuentas', [PagarCuentaController::class, 'ProveedorPagarCuentas'])->name('pagarcuentas.proveedor');
     Route::get('/pagarcuenta/{pagarcuenta}', [PagarCuentaController::class, 'edit'])->name('pagarcuenta.edit');
     Route::patch('/pagarcuenta/{pagarcuenta}', [PagarCuentaController::class, 'update'])->name('pagarcuenta.update');
-    Route::put('/pagarcuentas/{id}/finalizar', [PagarcuentaController::class, 'finalizarCuenta'])->name('pagarcuenta.finalizar');
+    Route::put('/pagarcuentas/{id}/finalizar', [PagarCuentaController::class, 'finalizarCuenta'])->name('pagarcuenta.finalizar');
     Route::delete('/pagarcuenta/{pagarcuenta}', [PagarCuentaController::class, 'destroy'])->name('pagarcuenta.destroy');
 });
 
