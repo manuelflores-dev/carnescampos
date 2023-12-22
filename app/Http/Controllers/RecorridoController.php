@@ -17,7 +17,7 @@ class RecorridoController extends Controller
      */
     public function index()
     {
-        return view('recorrido.index', ['recorridos' => Recorrido::with('empleado', 'vehiculo')->get()]);
+        return view('recorrido.index', ['recorridos' => Recorrido::with('empleado', 'vehiculo')->orderBy('created_at', 'desc')->get()]);
     }
 
     /**

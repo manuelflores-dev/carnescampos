@@ -83,7 +83,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($datos as $recorrido)
+                @foreach($recorridos as $recorrido)
                 <tr>
                     <th>
                         

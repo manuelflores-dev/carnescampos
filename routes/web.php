@@ -80,7 +80,7 @@ Route::middleware('auth')->group(function () {
     //Routes Recorrido
     Route::get('/recorrido/crear', [RecorridoController::class, 'create'])->name('recorrido.create');
     Route::get('/recorrido', [RecorridoController::class, 'index'])->name('recorrido.index');
-    Route::get('/generar-pdf-recorrido', [PDFController::class, 'generarPDF'])->name('recorrido.pdf');
+    Route::get('/generar-pdf-recorrido/{tipo}', [PDFController::class, 'RecorridosPDF'])->name('recorrido.pdf');
     Route::post('/recorrido', [RecorridoController::class, 'store'])->name('recorrido.store');
     Route::get('/buscar-recorrido', [RecorridoController::class, 'buscar'])->name('buscar.recorrido');
     Route::get('/empleado/{id}/recorridos', [RecorridoController::class, 'empleadoRecorridos'])->name('recorridos.empleado');
@@ -112,6 +112,7 @@ Route::middleware('auth')->group(function () {
     //Routes Cobrar cuentas
     Route::get('/cobrarcuenta/crear', [CobrarCuentaController::class, 'create'])->name('cobrarcuenta.create');
     Route::get('/cobrarcuenta', [CobrarCuentaController::class, 'index'])->name('cobrarcuenta.index');
+    Route::get('/generar-pdf-cobrarcuenta/{tipo}', [PDFController::class, 'CobrarcuentasPDF'])->name('cobrarcuenta.pdf');
     Route::post('/cobrarcuenta', [CobrarCuentaController::class, 'store'])->name('cobrarcuenta.store');
     Route::get('/buscar-cobrarcuenta', [CobrarCuentaController::class, 'buscar'])->name('buscar.cobrarcuenta');
     Route::get('/cliente/{id}/cobrarcuentas', [CobrarCuentaController::class, 'clienteCobrarcuentas'])->name('cobrarcuentas.cliente');
@@ -123,6 +124,7 @@ Route::middleware('auth')->group(function () {
     //Routes Pagar cuentas
     Route::get('/pagarcuenta/crear', [PagarCuentaController::class, 'create'])->name('pagarcuenta.create');
     Route::get('/pagarcuenta', [PagarCuentaController::class, 'index'])->name('pagarcuenta.index');
+    Route::get('/generar-pdf-pagarcuenta/{tipo}', [PDFController::class, 'PagarcuentasPDF'])->name('pagarcuenta.pdf');
     Route::post('/pagarcuenta', [PagarCuentaController::class, 'store'])->name('pagarcuenta.store');
     Route::get('/buscar-pagarcuenta', [PagarCuentaController::class, 'buscar'])->name('buscar.pagarcuenta');
     Route::get('/proveedor/{id}/pagarcuentas', [PagarCuentaController::class, 'ProveedorPagarCuentas'])->name('pagarcuentas.proveedor');
