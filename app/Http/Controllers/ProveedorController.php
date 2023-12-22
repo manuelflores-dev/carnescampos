@@ -15,7 +15,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        return view('proveedor.index', ['proveedors' => Proveedor::all()]);
+        return view('proveedor.index', ['proveedors' => Proveedor::orderBy('created_at', 'desc')->get()]);
     }
 
     /**

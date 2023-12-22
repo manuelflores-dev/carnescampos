@@ -15,7 +15,7 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        return view('empleado.index', ['empleados' => Empleado::all()]);
+        return view('empleado.index', ['empleados' => Empleado::orderBy('created_at', 'desc')->get()]);
     }
 
     /**

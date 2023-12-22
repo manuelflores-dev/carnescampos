@@ -16,7 +16,7 @@ class CobrarCuentaController extends Controller
      */
     public function index()
     {
-        return view('cobrarcuenta.index', ['cobrarcuentas' => CobrarCuenta::with('cliente')->get()]);
+        return view('cobrarcuenta.index', ['cobrarcuentas' => CobrarCuenta::with('cliente')->orderBy('created_at', 'desc')->get()]);
     }
 
     /**

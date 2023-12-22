@@ -15,7 +15,7 @@ class VehiculoController extends Controller
      */
     public function index()
     {
-        return view('vehiculo.index', ['vehiculos' => Vehiculo::all()]);
+        return view('vehiculo.index', ['vehiculos' => Vehiculo::orderBy('created_at', 'desc')->get()]);
     }
 
     /**

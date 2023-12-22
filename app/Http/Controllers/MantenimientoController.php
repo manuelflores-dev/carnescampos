@@ -16,7 +16,7 @@ class MantenimientoController extends Controller
      */
     public function index()
     {
-        return view('mantenimiento.index', ['mantenimientos' => Mantenimiento::with('vehiculo')->get()]);
+        return view('mantenimiento.index', ['mantenimientos' => Mantenimiento::with('vehiculo')->orderBy('created_at', 'desc')->get()]);
     }
 
     /**

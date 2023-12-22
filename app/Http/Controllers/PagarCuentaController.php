@@ -16,7 +16,7 @@ class PagarCuentaController extends Controller
      */
     public function index()
     {
-        return view('pagarcuenta.index', ['pagarcuentas' => PagarCuenta::with('proveedor')->get()]);
+        return view('pagarcuenta.index', ['pagarcuentas' => PagarCuenta::with('proveedor')->orderBy('created_at', 'desc')->get()]);
     }
 
     /**
