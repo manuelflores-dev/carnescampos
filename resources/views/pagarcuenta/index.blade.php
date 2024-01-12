@@ -13,6 +13,7 @@
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-red-600	flex flex-wrap items-center text-lg justify-center">
                 <a class="mr-5 hover:text-red-600" href="{{route('dashboard')}}">Regresar</a>
                 <a class="mr-5 hover:text-red-600" href="{{route('pagarcuenta.create')}}">Agregar cuenta por pagar</a>
+                <a class="mr-5 hover:text-red-600" href="{{route('pagarcuenta.create')}}">Indicadores</a>
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">

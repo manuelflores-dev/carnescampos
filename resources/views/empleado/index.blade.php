@@ -132,6 +132,7 @@
                                                 <div class="flex-grow">
                                                     <h2 class="text-gray-900 title-font font-medium">{{$empleado->nombre}}</h2>
                                                     <p class="text-gray-500">{{$empleado->area}}</p>
+                                                    <p class="text-gray-500">{{$empleado->telefono}}</p>
                                                     <p class="text-gray-500">
                                                     <div class="flex items-center">
                                                         @if($empleado->estatus== "Disponible")

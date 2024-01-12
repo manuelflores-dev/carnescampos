@@ -55,7 +55,7 @@
                                     <option selected>Seleccionar Vehículo</option>
                                     @foreach ($vehiculos as $vehiculo) @if ($vehiculo->estatus == 'Disponible')
                                     <option value="{{ $vehiculo->id }}">{{ $vehiculo->marca }} |
-                                        {{ $vehiculo->modelo }} | Placas: {{ $vehiculo->placas }} | Serie: {{ $vehiculo->serie }} | Año: {{ $vehiculo->year }}
+                                        {{ $vehiculo->modelo }} | Placas: {{ $vehiculo->placas }} | Serie: {{ $vehiculo->serie }} | Año: {{ $vehiculo->year }} | KM: {{ $vehiculo->kilometros }}
                                     </option>
                                     @endif
                                     @if ($vehiculo->estatus == 'No disponible')
